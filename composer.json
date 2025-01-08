@@ -6,8 +6,8 @@
     "license": ["GPL-2.0-or-later"],
     "keywords": ["TYPO3 CMS"],
     "require": {
-        "typo3/cms-core": ">=11.0 <13.0",
-        "typo3/cms-fluid-styled-content": ">=11.0 <13.0",
+        "typo3/cms-core": ">=11.0 <12.99",
+        "typo3/cms-fluid-styled-content": ">=11.0 <12.99",
         "b13/container": "*"
     },
     "autoload": {
