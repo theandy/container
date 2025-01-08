@@ -1,0 +1,87 @@
+page.includeCSS.container_package_layout = EXT:container_package/Resources/Public/Css/layout.css
+
+# Definiere Basispfade als Variablen
+lib.paths {
+    templates = EXT:container_package/Resources/Private/Templates/ContentElements/
+    partials = EXT:container_package/Resources/Private/Partials/ContentElements/
+    layouts = EXT:container_package/Resources/Private/Layouts/ContentElements/
+}
+
+# Verwende die Variablen
+tt_content.1col-container {
+    templateRootPaths.200 < lib.paths.templates
+    partialRootPaths.200 < lib.paths.partials
+    layoutRootPaths.200 < lib.paths.layouts
+}
+
+# Basis-Konfiguration
+lib.baseContainerConfiguration =< lib.contentElement
+lib.baseContainerConfiguration {
+    templateRootPaths.200 < lib.paths.templates
+    partialRootPaths.200 < lib.paths.partials
+    layoutRootPaths.200 < lib.paths.layouts
+    dataProcessing.13 = B13\Container\DataProcessing\ContainerProcessor
+
+    dataProcessing {
+        20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        20 {
+            references.fieldName = tx_container_bg_section
+            as = bg_img_section
+        }
+
+        100 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        100 {
+            references.fieldName = tx_container_bg_col_1
+            as = bg_img_col_1
+        }
+        110 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        110 {
+            references.fieldName = tx_container_bg_col_2
+            as = bg_img_col_2
+        }
+        120 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        120 {
+            references.fieldName = tx_container_bg_col_3
+            as = bg_img_col_3
+        }
+        130 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        130 {
+            references.fieldName = tx_container_bg_col_4
+            as = bg_img_col_4
+        }
+
+    }
+
+}
+
+# Section-Container
+tt_content.section-container =< lib.baseContainerConfiguration
+tt_content.section-container {
+    templateName = section-container
+}
+
+# 1 Spalten-Container
+tt_content.1col-container =< lib.baseContainerConfiguration
+tt_content.1col-container {
+    templateName = 1col-container
+}
+
+# 2 Spalten-Container
+tt_content.2col-container =< lib.baseContainerConfiguration
+tt_content.2col-container {
+    templateName = 2col-container
+}
+
+# 3 Spalten-Container
+tt_content.3col-container =< lib.baseContainerConfiguration
+tt_content.3col-container {
+    templateName = 3col-container
+}
+
+# 4 Spalten-Container
+tt_content.4col-container =< lib.baseContainerConfiguration
+tt_content.4col-container {
+    templateName = 4col-container
+}
+
+page.includeCSS.container_package_css = {$container_package.cssFile}

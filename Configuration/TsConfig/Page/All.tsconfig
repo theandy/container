@@ -1,0 +1,5 @@
+#
+# PageTS for Container-Package
+#
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:container_package/Configuration/TsConfig/Page/TCEFORM.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:container_package/Configuration/TsConfig/Page/TCEMAIN.tsconfig">

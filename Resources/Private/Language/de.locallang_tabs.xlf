@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2023-01-10UTC07:28:570">
+        <header>
+            <authorName>Andreas Löwer</authorName>
+            <authorEmail>info@andreasloewer.de</authorEmail>
+        </header>
+        <body>
+            <trans-unit id="tab.label">
+                <source>Container classes</source>
+                <target>Containerklassen</target>
+            </trans-unit>
+            <trans-unit id="classes.section.label">
+                <source>Classes section</source>
+                <target>Klassen für die Section</target>
+            </trans-unit>
+            <trans-unit id="classes.col1.label">
+                <source>Classes col 1</source>
+                <target>Klassen Spalte 1</target>
+            </trans-unit>
+            <trans-unit id="classes.col2.label">
+                <source>Classes col 2</source>
+                <target>Klassen Spalte 2</target>
+            </trans-unit>
+            <trans-unit id="classes.col3.label">
+                <source>Classes col 3</source>
+                <target>Klassen Spalte 3</target>
+            </trans-unit>
+            <trans-unit id="classes.col4.label">
+                <source>Classes col 4</source>
+                <target>Klassen Spalte 4</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

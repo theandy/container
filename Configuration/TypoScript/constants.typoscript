@@ -1,0 +1,15 @@
+# Definiere Basispfade als Variablen
+lib.paths {
+    templates = EXT:container_package/Resources/Private/Templates/ContentElements/
+    partials = EXT:container_package/Resources/Private/Partials/ContentElements/
+    layouts = EXT:container_package/Resources/Private/Layouts/ContentElements/
+}
+
+# Verwende die Variablen
+tt_content.1col-container {
+    templateRootPaths.200 < lib.paths.templates
+    partialRootPaths.200 < lib.paths.partials
+    layoutRootPaths.200 < lib.paths.layouts
+}
+
+container_package.cssFile = EXT:container_package/Resources/Public/Css/container_package.css

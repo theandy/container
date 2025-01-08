@@ -1,0 +1,17 @@
+// Variables
+// @import 'variables';
+
+
+
+.container, section {
+    
+    &.space-before-default {
+        margin-top: 4rem;
+    }
+    
+    
+    &.space-after-default {
+        margin-bottom: 4rem;
+    }
+    
+}

@@ -1,0 +1,23 @@
+<div id="container-{data.uid}" class="
+{data.tx_container_classes_container}
+{f:if(condition: '{data.space_before_class} != ""', then: 'space-before-{data.space_before_class}', else: 'space-before-default')}
+{f:if(condition: '{data.space_after_class} != ""', then: 'space-after-{data.space_after_class}', else: 'space-after-default')}"
+>
+    <div class="row {data.tx_container_classes_row}">
+        <div class="{data.tx_container_classes_col_1}">
+            <f:for each="{children_201}" as="element">
+                {element.renderedContent -> f:format.raw()}
+            </f:for>
+        </div>
+        <div class="{data.tx_container_classes_col_2}">
+            <f:for each="{children_202}" as="element">
+                {element.renderedContent -> f:format.raw()}
+            </f:for>
+        </div>
+        <div class="{data.tx_container_classes_col_3}">
+            <f:for each="{children_203}" as="element">
+                {element.renderedContent -> f:format.raw()}
+            </f:for>
+        </div>
+    </div>
+</div>

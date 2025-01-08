@@ -1,0 +1,10 @@
+<section data-zanim-timeline="{}" data-zanim-trigger="scroll" id="section-{data.uid}" class="overflow-hidden {data.tx_container_classes_section} {f:if(condition: '{data.space_before_class} != ""', then: 'space-before-{data.space_before_class}')} {f:if(condition: '{data.space_after_class} != ""', then: 'space-after-{data.space_after_class}')}">
+
+    <f:if condition="{bg_img_section}">
+        <div class="bg-holder overlay overlay-1" style="background-image:url({f:uri.image(image: '{bg_img_section.0}')});" data-parallax="data-parallax" data-rellax-percentage="0.5"></div>
+    </f:if>
+
+    <f:for each="{children_201}" as="element">
+        {element.renderedContent -> f:format.raw()}
+    </f:for>
+</section>
