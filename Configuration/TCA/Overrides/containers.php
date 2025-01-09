@@ -90,6 +90,27 @@
     ->setDefaultValues(['tx_container_classes_col_1' => 'col-6 col-lg-3', 'tx_container_classes_col_2' => 'col-6 col-lg-3', 'tx_container_classes_col_3' => 'col-6 col-lg-3', 'tx_container_classes_col_4' => 'col-6 col-lg-3'])
 );
 
+\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)-> configureContainer(
+    (
+    new \B13\Container\Tca\ContainerConfiguration(
+        '5col-container',
+        '5 Column Container',
+        'Insert a container element to divide content into three columns.',
+        [
+            [
+                ['name' => 'Column 1', 'colPos' => 201],
+                ['name' => 'Column 2', 'colPos' => 202],
+                ['name' => 'Column 3', 'colPos' => 203],
+                ['name' => 'Column 4', 'colPos' => 204],
+                ['name' => 'Column 5', 'colPos' => 205]
+            ]
+        ]
+    )
+    )
+        ->setIcon('EXT:container_package/Resources/Public/Icons/column-svgrepo-com.svg')
+        ->setDefaultValues(['tx_container_classes_col_1' => 'col-6 col-lg-3', 'tx_container_classes_col_2' => 'col-6 col-lg-3', 'tx_container_classes_col_3' => 'col-6 col-lg-3', 'tx_container_classes_col_4' => 'col-6 col-lg-3'])
+);
+
 $temporaryColumn = [
     'tx_container_bg_section' => [
         'exclude' => 0,
