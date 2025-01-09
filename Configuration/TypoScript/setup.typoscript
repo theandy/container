@@ -84,4 +84,16 @@ tt_content.4col-container {
     templateName = 4col-container
 }
 
+# 5 Spalten-Container
+tt_content.5col-container =< lib.baseContainerConfiguration
+tt_content.5col-container {
+    templateName = 5col-container
+}
+
+# 6 Spalten-Container
+tt_content.6col-container =< lib.baseContainerConfiguration
+tt_content.6col-container {
+    templateName = 6col-container
+}
+
 page.includeCSS.container_package_css = {$container_package.cssFile}
