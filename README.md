@@ -1,4 +1,4 @@
-Sitepackage for the project "Container-Package"
+Sitepackage "Container-Package"
 ==============================================================
 
 Add some explanation here.
