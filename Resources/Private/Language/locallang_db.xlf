@@ -6,6 +6,27 @@
             <authorEmail>info@andreasloewer.de</authorEmail>
         </header>
         <body>
+            <trans-unit id="tt_content.tx_container_classes_col_6" resname="tt_content.tx_container_classes_col_6">
+                <source>Classes column 6</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_container_classes_col_5" resname="tt_content.tx_container_classes_col_5">
+                <source>Classes column 5</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_container_classes_col_4" resname="tt_content.tx_container_classes_col_4">
+                <source>Classes column 4</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_container_classes_col_3" resname="tt_content.tx_container_classes_col_3">
+                <source>Classes column 3</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_container_classes_col_2" resname="tt_content.tx_container_classes_col_2">
+                <source>Classes column 2</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_container_classes_col_1" resname="tt_content.tx_container_classes_col_1">
+                <source>Classes column 1</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_container_classes_row" resname="tt_content.tx_container_classes_row">
+                <source>Row classes</source>
+            </trans-unit>
             <trans-unit id="tt_content.tx_container_classes_container" resname="tt_content.tx_container_classes_container">
                 <source>Container classes</source>
             </trans-unit>

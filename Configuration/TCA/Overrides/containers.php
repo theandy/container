@@ -218,7 +218,7 @@ $temporaryColumn = [
     ],
     'tx_container_classes_row' => [
         'exclude' => 0,
-        'label' => 'Classes row',
+        'label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:tt_content.tx_container_classes_row',
         'config' => [
             'type' => 'input',
             'default' => 'row'
@@ -226,7 +226,7 @@ $temporaryColumn = [
     ],
     'tx_container_classes_col_1' => [
         'exclude' => 0,
-        'label' => 'Classes column 1',
+        'label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:tt_content.tx_container_classes_col_1',
         'config' => [
             'type' => 'input',
             'default' => 'col-12'
@@ -234,7 +234,7 @@ $temporaryColumn = [
     ],
     'tx_container_classes_col_2' => [
         'exclude' => 0,
-        'label' => 'Classes column 2',
+        'label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:tt_content.tx_container_classes_col_2',
         'config' => [
             'type' => 'input',
             'default' => 'col-6'
@@ -242,7 +242,7 @@ $temporaryColumn = [
     ],
     'tx_container_classes_col_3' => [
         'exclude' => 0,
-        'label' => 'Classes column 3',
+        'label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:tt_content.tx_container_classes_col_3',
         'config' => [
             'type' => 'input',
             'default' => 'col-6'
@@ -250,7 +250,7 @@ $temporaryColumn = [
     ],
     'tx_container_classes_col_4' => [
         'exclude' => 0,
-        'label' => 'Classes column 4',
+        'label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:tt_content.tx_container_classes_col_4',
         'config' => [
             'type' => 'input',
             'default' => 'col-6'
@@ -258,7 +258,7 @@ $temporaryColumn = [
     ],
     'tx_container_classes_col_5' => [
         'exclude' => 0,
-        'label' => 'Classes column 5',
+        'label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:tt_content.tx_container_classes_col_5',
         'config' => [
             'type' => 'input',
             'default' => 'col-6'
@@ -266,7 +266,7 @@ $temporaryColumn = [
     ],
     'tx_container_classes_col_6' => [
         'exclude' => 0,
-        'label' => 'Classes column 6',
+        'label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:tt_content.tx_container_classes_col_6',
         'config' => [
             'type' => 'input',
             'default' => 'col-6'

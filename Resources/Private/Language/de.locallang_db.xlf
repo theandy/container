@@ -6,6 +6,34 @@
             <authorEmail>info@andreasloewer.de</authorEmail>
         </header>
         <body>
+            <trans-unit id="tt_content.tx_container_classes_col_6" resname="tt_content.tx_container_classes_col_6">
+                <source>Classes column 6</source>
+                <target>Klassen Spalte 6</target>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_container_classes_col_5" resname="tt_content.tx_container_classes_col_5">
+                <source>Classes column 5</source>
+                <target>Klassen Spalte 5</target>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_container_classes_col_4" resname="tt_content.tx_container_classes_col_4">
+                <source>Classes column 4</source>
+                <target>Klassen Spalte 4</target>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_container_classes_col_3" resname="tt_content.tx_container_classes_col_3">
+                <source>Classes column 3</source>
+                <target>Klassen Spalte 3</target>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_container_classes_col_2" resname="tt_content.tx_container_classes_col_2">
+                <source>Classes column 2</source>
+                <target>Klassen Spalte 2</target>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_container_classes_col_1" resname="tt_content.tx_container_classes_col_1">
+                <source>Classes column 1</source>
+                <target>Klassen Spalte 1</target>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_container_classes_row" resname="tt_content.tx_container_classes_row">
+                <source>Row classes</source>
+                <target>Reihe-Klassen</target>
+            </trans-unit>
             <trans-unit id="tt_content.tx_container_classes_container" resname="tt_content.tx_container_classes_container">
                 <source>Container classes</source>
                 <target>Container-Klassen</target>
@@ -16,11 +44,11 @@
             </trans-unit>
             <trans-unit id="tt_content.tx_container_bg_col_1">
               <source>Background image for column 1</source>
-              <target>Container-Konfiguration</target>
+              <target>Hintergrund Spalte 1</target>
             </trans-unit>
             <trans-unit id="tt_content.tx_container_bg_col_2">
               <source>Background image for column 2</source>
-              <target>Container-Konfiguration</target>
+              <target>Hintergrund Spalte 2</target>
             </trans-unit>
         </body>
     </file>
