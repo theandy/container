@@ -9,6 +9,12 @@
             <trans-unit id="tab.customContainerFields" resname="tab.customContainerFields">
                 <source>Container configuration</source>
             </trans-unit>
+            <trans-unit id="tt_content.tx_container_bg_col_1">
+              <source>Background image for column 1</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_container_bg_col_2">
+              <source>Background image for column 2</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

@@ -192,7 +192,20 @@ $temporaryColumn = [
     ],
     'tx_container_bg_col_1' => [
         'exclude' => 0,
-        'label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:deine_tabelle.tx_container_background_image',
+        'label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:tt_content.tx_container_bg_col_1',
+        'config' => [
+            'type' => 'file',
+            'allowed' => 'common-image-types',
+            'minitems' => 0,
+            'maxitems' => 1,
+            'appearance' => [
+                'showAllLocalizationLink' => true
+            ],
+        ],
+    ],
+    'tx_container_bg_col_2' => [
+        'exclude' => 0,
+        'label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:tt_content.tx_container_bg_col_2',
         'config' => [
             'type' => 'file',
             'allowed' => 'common-image-types',
