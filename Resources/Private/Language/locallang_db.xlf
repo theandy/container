@@ -6,6 +6,9 @@
             <authorEmail>info@andreasloewer.de</authorEmail>
         </header>
         <body>
+            <trans-unit id="tab.customContainerFields" resname="tab.customContainerFields">
+                <source>Container configuration</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

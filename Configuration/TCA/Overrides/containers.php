@@ -192,7 +192,7 @@ $temporaryColumn = [
     ],
     'tx_container_bg_col_1' => [
         'exclude' => 0,
-        'label' => 'LLL:EXT:deine_extension/Resources/Private/Language/locallang_db.xlf:deine_tabelle.tx_container_background_image',
+        'label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:deine_tabelle.tx_container_background_image',
         'config' => [
             'type' => 'file',
             'allowed' => 'common-image-types',
@@ -294,7 +294,7 @@ foreach ($containers as $identifier => $data) {
     $customFields = '';
     if (!empty($data['tcaFields'])) {
         $fieldsList = implode(',', $data['tcaFields']);
-        $customFields = '--div--;Custom container fields,' . $fieldsList . ',';
+        $customFields = '--div--;LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:tab.customContainerFields,' . $fieldsList . ',';
     }
 
     $GLOBALS['TCA']['tt_content']['types'][$identifier]['showitem'] =
