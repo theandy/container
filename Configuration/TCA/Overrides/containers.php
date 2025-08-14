@@ -190,6 +190,22 @@ $temporaryColumn = [
             'default' => 'container container-default'
         ],
     ],
+    'tx_container_classes_row' => [
+        'exclude' => 0,
+        'label' => 'Classes row',
+        'config' => [
+            'type' => 'input',
+            'default' => 'row'
+        ],
+    ],
+    'tx_container_classes_col_1' => [
+        'exclude' => 0,
+        'label' => 'Classes column 1',
+        'config' => [
+            'type' => 'input',
+            'default' => 'row'
+        ],
+    ]
     // ... hier weitere Felder definieren wie in deinem Originalcode ...
 ];
 
