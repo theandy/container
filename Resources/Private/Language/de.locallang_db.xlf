@@ -6,15 +6,21 @@
             <authorEmail>info@andreasloewer.de</authorEmail>
         </header>
         <body>
+            <trans-unit id="tab.customContainerFields" resname="tt_content.tx_container_classes_container">
+                <source>Container classes</source>
+                <target>Container-Klassen</target>
+            </trans-unit>
             <trans-unit id="tab.customContainerFields" resname="tab.customContainerFields">
                 <source>Container configuration</source>
                 <target>Container-Konfiguration</target>
             </trans-unit>
             <trans-unit id="tt_content.tx_container_bg_col_1">
-              <source>Hintergrund Spalte 1</source>
+              <source>Background image for column 1</source>
+              <target>Container-Konfiguration</target>
             </trans-unit>
             <trans-unit id="tt_content.tx_container_bg_col_2">
-              <source>Hintergrund Spalte 2</source>
+              <source>Background image for column 2</source>
+              <target>Container-Konfiguration</target>
             </trans-unit>
         </body>
     </file>

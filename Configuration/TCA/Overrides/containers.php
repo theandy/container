@@ -184,7 +184,7 @@ $temporaryColumn = [
     // Beispiel: nur ein Feld, hier würdest du alle deine tx_container_* Felder wie gehabt definieren
     'tx_container_classes_container' => [
         'exclude' => 0,
-        'label' => 'Classes container',
+        'label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:tt_content.tx_container_classes_container',
         'config' => [
             'type' => 'input',
             'default' => 'container container-default'
