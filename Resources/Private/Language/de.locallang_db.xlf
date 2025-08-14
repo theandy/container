@@ -6,7 +6,7 @@
             <authorEmail>info@andreasloewer.de</authorEmail>
         </header>
         <body>
-            <trans-unit id="tab.customContainerFields" resname="tt_content.tx_container_classes_container">
+            <trans-unit id="tt_content.tx_container_classes_container" resname="tt_content.tx_container_classes_container">
                 <source>Container classes</source>
                 <target>Container-Klassen</target>
             </trans-unit>
