@@ -190,6 +190,19 @@ $temporaryColumn = [
             'default' => 'container container-default'
         ],
     ],
+    'tx_container_bg_col_1' => [
+        'exclude' => 0,
+        'label' => 'LLL:EXT:deine_extension/Resources/Private/Language/locallang_db.xlf:deine_tabelle.tx_container_background_image',
+        'config' => [
+            'type' => 'file',
+            'allowed' => 'common-image-types',
+            'minitems' => 0,
+            'maxitems' => 1,
+            'appearance' => [
+                'showAllLocalizationLink' => true
+            ],
+        ],
+    ],
     'tx_container_classes_row' => [
         'exclude' => 0,
         'label' => 'Classes row',
@@ -217,6 +230,30 @@ $temporaryColumn = [
     'tx_container_classes_col_3' => [
         'exclude' => 0,
         'label' => 'Classes column 3',
+        'config' => [
+            'type' => 'input',
+            'default' => 'col-6'
+        ],
+    ],
+    'tx_container_classes_col_4' => [
+        'exclude' => 0,
+        'label' => 'Classes column 4',
+        'config' => [
+            'type' => 'input',
+            'default' => 'col-6'
+        ],
+    ],
+    'tx_container_classes_col_5' => [
+        'exclude' => 0,
+        'label' => 'Classes column 5',
+        'config' => [
+            'type' => 'input',
+            'default' => 'col-6'
+        ],
+    ],
+    'tx_container_classes_col_6' => [
+        'exclude' => 0,
+        'label' => 'Classes column 6',
         'config' => [
             'type' => 'input',
             'default' => 'col-6'
