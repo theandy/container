@@ -2,7 +2,7 @@
     "name": "andreas-loewer/container-package",
     "type": "typo3-cms-extension",
     "description": "Adds container-support to TYPO3 installation",
-    "homepage": "https://www.andreasloewer.de",
+    "homepage": "https://andreasloewer.de",
     "license": ["GPL-2.0-or-later"],
     "keywords": ["TYPO3 CMS"],
     "require": {
