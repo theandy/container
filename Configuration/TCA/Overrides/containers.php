@@ -177,6 +177,16 @@ foreach ($containers as $identifier => $data) {
     $registry->configureContainer($config);
 }
 
+// PreviewRenderer für alle *-container aktivieren
+foreach (array_keys($containers) as $identifier) {
+    if (substr($identifier, -10) === '-container') {
+        $GLOBALS['TCA']['tt_content']['types'][$identifier]['previewRenderer']
+            = \AndreasLoewer\ContainerPackage\Backend\ContainerPreview::class;
+    }
+}
+
+
+
 // -----------------------------------
 // 3. Zusätzliche Felder definieren
 // -----------------------------------
