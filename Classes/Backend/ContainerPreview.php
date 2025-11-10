@@ -1,30 +1,35 @@
 <?php
 namespace AndreasLoewer\ContainerPackage\Backend;
 
-if (interface_exists(\TYPO3\CMS\Backend\View\Rendering\PreviewRendererInterface::class)) {
-    use TYPO3\CMS\Backend\View\PageLayoutView;
-    use TYPO3\CMS\Backend\View\Rendering\PreviewRendererInterface;
+use TYPO3\CMS\Backend\View\PageLayoutView;
+use TYPO3\CMS\Backend\View\Rendering\PreviewRendererInterface;
 
-    final class ContainerPreview implements PreviewRendererInterface
+if (!interface_exists(PreviewRendererInterface::class)) {
+    // Nichts definieren, ältere TYPO3-Version nutzt den Hook.
+    return;
+}
+
+final class ContainerPreview implements PreviewRendererInterface
+{
+    public function render(PageLayoutView $parentObject, array $row): string
     {
-        public function render(PageLayoutView $parentObject, array $row): string
-        {
-            $ctype = (string)($row['CType'] ?? '');
-            if ($ctype === '' || substr($ctype, -10) !== '-container') {
-                return '';
-            }
-            $uid = (int)($row['uid'] ?? 0);
-            if ($uid <= 0) {
-                return '';
-            }
+        $ctype = (string)($row['CType'] ?? '');
+        if ($ctype === '' || substr($ctype, -10) !== '-container') {
+            return '';
+        }
 
-            $color = trim((string)($row['tx_backend_bgcolor'] ?? ''));
-            if ($color === '') {
-                return '';
-            }
+        $uid = (int)($row['uid'] ?? 0);
+        if ($uid <= 0) {
+            return '';
+        }
 
-            $c = htmlspecialchars($color, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
-            return <<<HTML
+        $color = trim((string)($row['tx_backend_bgcolor'] ?? ''));
+        if ($color === '') {
+            return '';
+        }
+
+        $c = htmlspecialchars($color, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+        return <<<HTML
 <style data-container-bg="{$uid}">
 .t3-page-ce[data-uid="{$uid}"],
 .t3-page-ce[data-element-uid="{$uid}"],
@@ -38,6 +43,5 @@ if (interface_exists(\TYPO3\CMS\Backend\View\Rendering\PreviewRendererInterface:
 }
 </style>
 HTML;
-        }
     }
 }
