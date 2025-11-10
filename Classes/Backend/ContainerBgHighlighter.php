@@ -7,6 +7,11 @@ final class ContainerBgHighlighter
 {
     public function __invoke(PageContentPreviewRenderingEvent $event): void
     {
+        // nur tt_content
+        if ($event->getTable() !== 'tt_content') {
+            return;
+        }
+
         $row = $event->getRecord();
         $ctype = (string)($row['CType'] ?? '');
         if ($ctype === '' || substr($ctype, -10) !== '-container') {
@@ -15,24 +20,28 @@ final class ContainerBgHighlighter
 
         $color = trim((string)($row['tx_backend_bgcolor'] ?? ''));
         if ($color === '') {
-            return; // nichts zu tun
+            return;
         }
 
         $uid = (int)($row['uid'] ?? 0);
-        $c   = htmlspecialchars($color, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
-        $u   = $uid;
+        if ($uid <= 0) {
+            return;
+        }
 
-        // Nur Style injizieren. Preview nicht wrappen, nichts entfernen.
+        $c = htmlspecialchars($color, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+
+        // Nur Style injizieren. Nichts wrappen. Preview-Content nicht ersetzen.
         $css = <<<HTML
-<style data-container-bg="$u">
-.t3-page-ce[data-uid="$u"],
-.t3-page-ce[data-element-uid="$u"],
-.t3js-page-ce[data-uid="$u"],
-.t3js-page-ce[data-element-uid="$u"],
-.t3-page-ce-dragitem[data-uid="$u"],
-#element-tt_content-$u,
-#element-tt_content_$u,
-.ce-element[data-uid="$u"]{
+<style data-container-bg="$uid">
+/* häufige Wrapper im Seitenmodul */
+.t3-page-ce[data-uid="$uid"],
+.t3-page-ce[data-element-uid="$uid"],
+.t3js-page-ce[data-uid="$uid"],
+.t3js-page-ce[data-element-uid="$uid"],
+.t3-page-ce-dragitem[data-uid="$uid"],
+#element-tt_content-$uid,
+#element-tt_content_$uid,
+.ce-element[data-uid="$uid"]{
   background: $c !important;
   border: 1px solid rgba(0,0,0,.08);
   border-radius: 4px;
@@ -40,6 +49,7 @@ final class ContainerBgHighlighter
 </style>
 HTML;
 
-        $event->setPreviewContent($css . (string)$event->getPreviewContent());
+        // Nur CSS setzen. Keine Inhalte anhängen.
+        $event->setPreviewContent($css);
     }
 }
