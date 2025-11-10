@@ -1,11 +1,6 @@
 services:
-  _defaults:
-    autowire: false
-    autoconfigure: false
-    public: true
-
   AndreasLoewer\ContainerPackage\Backend\ContainerBgHighlighter:
     tags:
       - name: event.listener
         identifier: 'container_package.containerBgHighlighter'
-        event: TYPO3\CMS\Backend\View/Event/PageContentPreviewRenderingEvent
+        event: TYPO3\CMS\Backend\View\Event\PageContentPreviewRenderingEvent
