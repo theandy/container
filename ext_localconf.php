@@ -1,9 +1,6 @@
 <?php
 defined('TYPO3') or die('Access denied.');
 
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['drawItem'][]
-    = \AndreasLoewer\ContainerPackage\Backend\CeColorHook::class;
-
 
 /***************
  * PageTS
