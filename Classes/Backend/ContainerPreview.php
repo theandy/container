@@ -1,40 +1,30 @@
 <?php
-/**
- * Project: container_package
- * File: ContainerPreview.php
- * Author: WSM
- * Date: 10.11.2025
- */
-
-
 namespace AndreasLoewer\ContainerPackage\Backend;
 
-use TYPO3\CMS\Backend\View\PageLayoutView;
-use TYPO3\CMS\Backend\View\Rendering\PreviewRendererInterface;
+if (interface_exists(\TYPO3\CMS\Backend\View\Rendering\PreviewRendererInterface::class)) {
+    use TYPO3\CMS\Backend\View\PageLayoutView;
+    use TYPO3\CMS\Backend\View\Rendering\PreviewRendererInterface;
 
-final class ContainerPreview implements PreviewRendererInterface
-{
-    public function render(PageLayoutView $parentObject, array $row): string
+    final class ContainerPreview implements PreviewRendererInterface
     {
-        $ctype = (string)($row['CType'] ?? '');
-        if ($ctype === '' || substr($ctype, -10) !== '-container') {
-            return '';
-        }
+        public function render(PageLayoutView $parentObject, array $row): string
+        {
+            $ctype = (string)($row['CType'] ?? '');
+            if ($ctype === '' || substr($ctype, -10) !== '-container') {
+                return '';
+            }
+            $uid = (int)($row['uid'] ?? 0);
+            if ($uid <= 0) {
+                return '';
+            }
 
-        $uid = (int)($row['uid'] ?? 0);
-        if ($uid <= 0) {
-            return '';
-        }
+            $color = trim((string)($row['tx_backend_bgcolor'] ?? ''));
+            if ($color === '') {
+                return '';
+            }
 
-        $color = trim((string)($row['tx_backend_bgcolor'] ?? ''));
-        if ($color === '') {
-            // Marker zum Testen, dass der Renderer läuft
-            return '<i data-preview="' . htmlspecialchars((string)$uid) . '"></i>';
-        }
-
-        $c = htmlspecialchars($color, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
-        return <<<HTML
-<i data-preview="{$uid}"></i>
+            $c = htmlspecialchars($color, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+            return <<<HTML
 <style data-container-bg="{$uid}">
 .t3-page-ce[data-uid="{$uid}"],
 .t3-page-ce[data-element-uid="{$uid}"],
@@ -48,5 +38,6 @@ final class ContainerPreview implements PreviewRendererInterface
 }
 </style>
 HTML;
+        }
     }
 }

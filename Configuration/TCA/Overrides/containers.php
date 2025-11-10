@@ -177,13 +177,16 @@ foreach ($containers as $identifier => $data) {
     $registry->configureContainer($config);
 }
 
-// PreviewRenderer für alle *-container aktivieren
-foreach (array_keys($containers) as $identifier) {
-    if (substr($identifier, -10) === '-container') {
-        $GLOBALS['TCA']['tt_content']['types'][$identifier]['previewRenderer']
-            = \AndreasLoewer\ContainerPackage\Backend\ContainerPreview::class;
+// PreviewRenderer nur setzen, wenn verfügbar
+if (interface_exists(\TYPO3\CMS\Backend\View\Rendering\PreviewRendererInterface::class)) {
+    foreach (array_keys($containers) as $identifier) {
+        if (substr($identifier, -10) === '-container') {
+            $GLOBALS['TCA']['tt_content']['types'][$identifier]['previewRenderer']
+                = \AndreasLoewer\ContainerPackage\Backend\ContainerPreview::class;
+        }
     }
 }
+
 
 
 
