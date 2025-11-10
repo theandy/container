@@ -1,0 +1,6 @@
+services:
+  AndreasLoewer\ContainerPackage\Backend\ContainerBgHighlighter:
+    tags:
+      - name: event.listener
+        identifier: 'container_package.containerBgHighlighter'
+        event: TYPO3\CMS\Backend\View\Event\PageContentPreviewRenderingEvent
