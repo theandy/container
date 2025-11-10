@@ -1,5 +1,5 @@
 #
-# Add SQL definition of database tables
+# Add SQL definition of database tables...
 #
 
 CREATE TABLE tt_content (
