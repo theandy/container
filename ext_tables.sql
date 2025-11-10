@@ -17,4 +17,5 @@ CREATE TABLE tt_content (
     tx_container_classes_col_4 VARCHAR(255) DEFAULT '0' NOT NULL,
     tx_container_classes_col_5 VARCHAR(255) DEFAULT '0' NOT NULL,
     tx_container_classes_col_6 VARCHAR(255) DEFAULT '0' NOT NULL,
+    tx_backend_bgcolor varchar(12) DEFAULT '' NOT NULL,
 );
