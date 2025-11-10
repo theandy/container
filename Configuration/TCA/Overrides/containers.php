@@ -181,7 +181,6 @@ foreach ($containers as $identifier => $data) {
 // 3. Zusätzliche Felder definieren
 // -----------------------------------
 $temporaryColumn = [
-    // Beispiel: nur ein Feld, hier würdest du alle deine tx_container_* Felder wie gehabt definieren
     'tx_container_classes_container' => [
         'exclude' => 0,
         'label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:tt_content.tx_container_classes_container',
@@ -271,14 +270,28 @@ $temporaryColumn = [
             'type' => 'input',
             'default' => 'col-6'
         ],
-    ]
-    // ... hier weitere Felder definieren wie in deinem Originalcode ...
+    ],
+
+    // --- NEU: Backend-Hintergrundfarbe nur für *-container ---
+    'tx_backend_bgcolor' => [
+        'exclude' => 0, // bei Bedarf 1 und Rechte vergeben
+        'label' => 'Hintergrundfarbe (nur Backend)',
+        'description' => 'Wird nur im Seitenmodul angezeigt. Kein Einfluss auf das Frontend.',
+        'displayCond' => 'FIELD:CType:LIKE:%-container',
+        'config' => [
+            'type' => 'input',
+            'renderType' => 'colorpicker',
+            'size' => 10,
+            'eval' => 'trim',
+        ],
+    ],
 ];
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $temporaryColumn);
 
 // -----------------------------------
 // 4. TCA showitem automatisch bauen
+//    + tx_backend_bgcolor für alle *-container anhängen
 // -----------------------------------
 $baseShowItem = '
     --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
@@ -303,6 +316,14 @@ $languageAccessCats = '
     --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
 ';
 
+// tx_backend_bgcolor zu allen *-container Typen hinzufügen
+foreach ($containers as $identifier => $data) {
+    if (substr($identifier, -10) === '-container') {
+        $containers[$identifier]['tcaFields'][] = 'tx_backend_bgcolor';
+    }
+}
+
+// showitem bauen
 foreach ($containers as $identifier => $data) {
     $customFields = '';
     if (!empty($data['tcaFields'])) {

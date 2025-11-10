@@ -6,15 +6,9 @@ use TYPO3\CMS\Backend\View\PageLayoutViewDrawItemHookInterface;
 
 class CeColorHook implements PageLayoutViewDrawItemHookInterface
 {
-    public function preProcess(
-        PageLayoutView &$parent,
-                       &$drawItem,
-                       &$headerContent,
-                       &$itemContent,
-        array &$row
-    ) {
+    public function preProcess(PageLayoutView &$parent, &$drawItem, &$headerContent, &$itemContent, array &$row)
+    {
         $ctype = (string)($row['CType'] ?? '');
-        // nur unsere Container-CTypes
         if (!in_array($ctype, ['1col-container','2col-container','3col-container'], true)) {
             return;
         }
