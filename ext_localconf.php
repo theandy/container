@@ -1,10 +1,9 @@
 <?php
 defined('TYPO3') or die('Access denied.');
 
-if (!interface_exists(\TYPO3\CMS\Backend\View\Rendering\PreviewRendererInterface::class)) {
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['drawItem'][]
-        = \AndreasLoewer\ContainerPackage\Backend\CeColorHook::class;
-}
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\B13\Container\Backend\Preview\ContainerPreviewRenderer::class] = [
+    'className' => \AndreasLoewer\ContainerPackage\Backend\Xclass\ContainerPreviewRenderer::class,
+];
 
 /***************
  * PageTS
