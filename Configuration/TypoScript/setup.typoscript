@@ -1,4 +1,4 @@
-page.includeCSS.container_package_layout = EXT:container_package/Resources/Public/Css/layout.css
+# page.includeCSS.container_package_layout = EXT:container_package/Resources/Public/Css/layout.css
 
 # Definiere Basispfade als Variablen
 lib.paths {
