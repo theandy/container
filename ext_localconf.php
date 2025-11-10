@@ -1,11 +1,9 @@
 <?php
 defined('TYPO3') or die('Access denied.');
 
-// Fallback für TYPO3 11
-if (!class_exists(\TYPO3\CMS\Backend\View\Event\PageContentPreviewRenderingEvent::class)) {
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['drawItem'][]
-        = \AndreasLoewer\ContainerPackage\Backend\CeColorHook::class;
-}
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['drawItem'][]
+    = \AndreasLoewer\ContainerPackage\Backend\CeColorHook::class;
+
 
 /***************
  * PageTS
