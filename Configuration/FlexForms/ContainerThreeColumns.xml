@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Spalten-Einstellungen</sheetTitle>
+                </TCEforms>
+                <el>
+                    <columnClassLeft>
+                        <TCEforms>
+                            <label>Klasse linke Spalte</label>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items>
+                                    <numIndex index="0">
+                                        <numIndex index="0">– keine –</numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                    <numIndex index="1">
+                                        <numIndex index="0">Schmal</numIndex>
+                                        <numIndex index="1">is-narrow</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2">
+                                        <numIndex index="0">Breit</numIndex>
+                                        <numIndex index="1">is-wide</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3">
+                                        <numIndex index="0">Hintergrund grau</numIndex>
+                                        <numIndex index="1">bg-gray</numIndex>
+                                    </numIndex>
+                                </items>
+                                <default></default>
+                            </config>
+                        </TCEforms>
+                    </columnClassLeft>
+
+                    <columnClassMiddle>
+                        <TCEforms>
+                            <label>Klasse mittlere Spalte</label>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items>
+                                    <numIndex index="0"><numIndex index="0">– keine –</numIndex><numIndex index="1"></numIndex></numIndex>
+                                    <numIndex index="1"><numIndex index="0">Schmal</numIndex><numIndex index="1">is-narrow</numIndex></numIndex>
+                                    <numIndex index="2"><numIndex index="0">Breit</numIndex><numIndex index="1">is-wide</numIndex></numIndex>
+                                    <numIndex index="3"><numIndex index="0">Hintergrund grau</numIndex><numIndex index="1">bg-gray</numIndex></numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </columnClassMiddle>
+
+                    <columnClassRight>
+                        <TCEforms>
+                            <label>Klasse rechte Spalte</label>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items>
+                                    <numIndex index="0"><numIndex index="0">– keine –</numIndex><numIndex index="1"></numIndex></numIndex>
+                                    <numIndex index="1"><numIndex index="0">Schmal</numIndex><numIndex index="1">is-narrow</numIndex></numIndex>
+                                    <numIndex index="2"><numIndex index="0">Breit</numIndex><numIndex index="1">is-wide</numIndex></numIndex>
+                                    <numIndex index="3"><numIndex index="0">Hintergrund grau</numIndex><numIndex index="1">bg-gray</numIndex></numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </columnClassRight>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

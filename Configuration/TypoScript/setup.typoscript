@@ -34,3 +34,22 @@ lib.containerContent {
     }
     renderObj = < tt_content
 }
+
+tt_content {
+    container_three_columns = FLUIDTEMPLATE
+    container_three_columns {
+        templateName = ThreeColumns
+        templateRootPaths.10 = EXT:container_package/Resources/Private/Templates/Content/
+        partialRootPaths.10  = EXT:container_package/Resources/Private/Partials/
+        layoutRootPaths.10   = EXT:container_package/Resources/Private/Layouts/
+
+        dataProcessing {
+            10 = B13\Container\DataProcessing\ContainerProcessor
+            20 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
+            20 {
+                if.isTrue.field = pi_flexform
+                as = flex
+            }
+        }
+    }
+}

@@ -7,28 +7,14 @@
     </f:if>
 
     <div class="c-container__grid c-container__grid--3">
-      <div class="c-col c-col--left">
-        <f:if condition="{children_201}">
-          <f:for each="{children_201}" as="child">
-            {child.renderedContent -> f:format.raw()}
-          </f:for>
-        </f:if>
+      <div class="c-col c-col--left {flex.columnClassLeft}">
+        <f:for each="{children_201}" as="child">{child.renderedContent -> f:format.raw()}</f:for>
       </div>
-
-      <div class="c-col c-col--middle">
-        <f:if condition="{children_202}">
-          <f:for each="{children_202}" as="child">
-            {child.renderedContent -> f:format.raw()}
-          </f:for>
-        </f:if>
+      <div class="c-col c-col--middle {flex.columnClassMiddle}">
+        <f:for each="{children_202}" as="child">{child.renderedContent -> f:format.raw()}</f:for>
       </div>
-
-      <div class="c-col c-col--right">
-        <f:if condition="{children_203}">
-          <f:for each="{children_203}" as="child">
-            {child.renderedContent -> f:format.raw()}
-          </f:for>
-        </f:if>
+      <div class="c-col c-col--right {flex.columnClassRight}">
+        <f:for each="{children_203}" as="child">{child.renderedContent -> f:format.raw()}</f:for>
       </div>
     </div>
   </div>
