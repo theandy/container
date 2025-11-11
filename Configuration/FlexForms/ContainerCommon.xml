@@ -47,9 +47,20 @@
                     </bgColor>
 
                     <!-- Freitext-Klassen pro Spalte; in 1- oder 2-Spaltern bleiben ungenutzte Felder ohne Effekt -->
-                    <columnClassLeft><label>Klasse linke Spalte</label><config><type>input</type></config></columnClassLeft>
-                    <columnClassMiddle><label>Klasse mittlere Spalte</label><config><type>input</type></config></columnClassMiddle>
-                    <columnClassRight><label>Klasse rechte Spalte</label><config><type>input</type></config></columnClassRight>
+                    <columnClassLeft>
+                        <label>Klasse linke Spalte</label>
+                        <config><type>input</type></config>
+                    </columnClassLeft>
+                    <columnClassMiddle>
+                        <label>Klasse mittlere Spalte</label>
+                        <config><type>input</type></config>
+                        <displayCond>FIELD:CType:=:container_two_columns,container_three_columns</displayCond>
+                    </columnClassMiddle>
+                    <columnClassRight>
+                        <label>Klasse rechte Spalte</label>
+                        <config><type>input</type></config>
+                        <displayCond>FIELD:CType:=:container_three_columns</displayCond>
+                    </columnClassRight>
                 </el>
             </ROOT>
         </sDEF>
