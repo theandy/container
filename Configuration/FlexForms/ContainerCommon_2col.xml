@@ -3,11 +3,11 @@
     <sheets>
         <sDEF>
             <ROOT>
-                <sheetTitle>Container-Settings</sheetTitle>
+                <sheetTitle>LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:sheet.settings</sheetTitle>
                 <type>array</type>
                 <el>
                     <spacingTop>
-                        <label>Abstand oben</label>
+                        <label>LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:field.spacingTop</label>
                         <config>
                             <type>select</type><renderType>selectSingle</renderType>
                             <items>
@@ -21,7 +21,7 @@
                     </spacingTop>
 
                     <spacingBottom>
-                        <label>Abstand unten</label>
+                        <label>LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:field.spacingBottom</label>
                         <config>
                             <type>select</type><renderType>selectSingle</renderType>
                             <items>
@@ -35,7 +35,7 @@
                     </spacingBottom>
 
                     <bgColor>
-                        <label>Hintergrund</label>
+                        <label>LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:field.background</label>
                         <config>
                             <type>select</type><renderType>selectSingle</renderType>
                             <items>
@@ -47,22 +47,22 @@
                     </bgColor>
 
                     <classesContainer>
-                        <label>Klassen Container</label>
+                        <label>LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:field.classesContainer</label>
                         <config><type>input</type></config>
                     </classesContainer>
 
                     <classesRow>
-                        <label>Klassen Row</label>
+                        <label>LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:field.classesRow</label>
                         <config><type>input</type></config>
                     </classesRow>
 
                     <classesCol1>
-                        <label>Klasse Spalte 1</label>
+                        <label>LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:field.classesCol1</label>
                         <config><type>input</type></config>
                     </classesCol1>
 
                     <classesCol2>
-                        <label>Klasse Spalte 2</label>
+                        <label>LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:field.classesCol2</label>
                         <config><type>input</type></config>
                     </classesCol2>
                 </el>

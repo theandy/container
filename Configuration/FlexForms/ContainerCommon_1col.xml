@@ -62,17 +62,17 @@
                     </bgColor>
 
                     <classesContainer>
-                        <label>Klassen Container</label>
+                        <label>LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:field.classesContainer</label>
                         <config><type>input</type></config>
                     </classesContainer>
 
                     <classesRow>
-                        <label>Klassen Row</label>
+                        <label>LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:field.classesRow</label>
                         <config><type>input</type></config>
                     </classesRow>
 
                     <classesCol1>
-                        <label>Klasse Spalte</label>
+                        <label>LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:field.classesCol1</label>
                         <config><type>input</type></config>
                     </classesCol1>
                 </el>

@@ -3,7 +3,7 @@
     <sheets>
         <sDEF>
             <ROOT>
-                <sheetTitle>Section-Settings</sheetTitle>
+                <sheetTitle>LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:sheet.settings</sheetTitle>
                 <type>array</type>
                 <el>
                     <tag>
@@ -22,7 +22,7 @@
                     <containerClass><label>Zusätzliche Klassen</label><config><type>input</type></config></containerClass>
 
                     <spacingTop>
-                        <label>Abstand oben</label>
+                        <label>LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:field.spacingTop</label>
                         <config>
                             <type>select</type><renderType>selectSingle</renderType>
                             <items>
@@ -35,7 +35,7 @@
                         </config>
                     </spacingTop>
                     <spacingBottom>
-                        <label>Abstand unten</label>
+                        <label>LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:field.spacingBottom</label>
                         <config>
                             <type>select</type><renderType>selectSingle</renderType>
                             <items>
