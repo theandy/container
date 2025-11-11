@@ -37,7 +37,21 @@ RTE.config.tt_content.bodytext {
 
 # Platzhalter: weitere projektspezifische PageTS hier einfügen
 
-mod.wizards.newContentElement {
-    renderMode = tabs
-    showDescriptions = 1
+mod.wizards.newContentElement.wizardItems.containers.elements {
+    container_one_column {
+        title = LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:c1.title
+        description = LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:c1.desc
+    }
+    container_two_columns {
+        title = LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:c2.title
+        description = LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:c2.desc
+    }
+    container_three_columns {
+        title = LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:c3.title
+        description = LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:c3.desc
+    }
+    container_section {
+        title = LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:section.title
+        description = LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:section.desc
+    }
 }
