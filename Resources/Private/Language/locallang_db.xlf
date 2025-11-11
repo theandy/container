@@ -3,6 +3,13 @@
     <file source-language="en" target-language="de" datatype="plaintext" original="messages" product-name="container_package">
         <header/>
         <body>
+
+            <trans-unit id="tab.containerSettings">
+                <source>Container settings</source>
+                <target>Container-Settings</target>
+            </trans-unit>
+
+
         <!-- Container: Dreispalter -->
             <trans-unit id="container_three_columns.title">
                 <source>Three Columns</source>

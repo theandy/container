@@ -41,8 +41,8 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
     // Feld nach "records" einfügen (gleicher Tab wie die Kinderliste)
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
         'tt_content',
-        'pi_flexform',
-        'container_three_columns',
-        'after:records'
+        '--div--;LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:tab.containerSettings,pi_flexform',
+        'container_three_columns'
     );
+
 })();
