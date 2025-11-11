@@ -51,10 +51,10 @@
                         <config><type>input</type></config>
                     </classesContainer>
 
-                    <classesCol_1>
+                    <classesCol1>
                         <label>Klasse Spalte</label>
                         <config><type>input</type></config>
-                    </classesCol_1>
+                    </classesCol1>
                 </el>
             </ROOT>
         </sDEF>

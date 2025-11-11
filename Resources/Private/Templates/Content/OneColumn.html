@@ -1,8 +1,8 @@
 <f:layout name="Default" />
 <f:section name="Main">
-  <div class="c-container {flex.spacingTop} {flex.spacingBottom} {flex.bgColor}" id="c{data.uid}">
+  <div class="c-container {flex.classesContainer} {flex.spacingTop} {flex.spacingBottom} {flex.bgColor}" id="c{data.uid}">
     <div class="c-grid c-grid--1">
-      <div class="c-col {flex.columnClassLeft}">
+      <div class="c-col {flex.classesCol1}">
         <f:for each="{children_201}" as="child">{child.renderedContent -> f:format.raw()}</f:for>
       </div>
     </div>

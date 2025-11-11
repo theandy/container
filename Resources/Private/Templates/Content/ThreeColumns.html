@@ -1,14 +1,14 @@
 <f:layout name="Default" />
 <f:section name="Main">
-  <div class="c-container {flex.spacingTop} {flex.spacingBottom} {flex.bgColor}" id="c{data.uid}">
+  <div class="c-container {flex.classesContainer} {flex.spacingTop} {flex.spacingBottom} {flex.bgColor}" id="c{data.uid}">
     <div class="c-grid c-grid--3">
-      <div class="c-col c-col--left {flex.columnClassLeft}">
+      <div class="c-col c-col--left {flex.classesCol1}">
         <f:for each="{children_201}" as="child">{child.renderedContent -> f:format.raw()}</f:for>
       </div>
-      <div class="c-col c-col--middle {flex.columnClassMiddle}">
+      <div class="c-col c-col--middle {flex.classesCol2}">
         <f:for each="{children_202}" as="child">{child.renderedContent -> f:format.raw()}</f:for>
       </div>
-      <div class="c-col c-col--right {flex.columnClassRight}">
+      <div class="c-col c-col--right {flex.classesCol3}">
         <f:for each="{children_203}" as="child">{child.renderedContent -> f:format.raw()}</f:for>
       </div>
     </div>

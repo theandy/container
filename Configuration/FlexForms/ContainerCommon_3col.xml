@@ -46,18 +46,26 @@
                         </config>
                     </bgColor>
 
-                    <columnClassLeft>
-                        <label>Klasse linke Spalte</label>
+                    <classesContainer>
+                        <label>Klassen Container</label>
                         <config><type>input</type></config>
-                    </columnClassLeft>
-                    <columnClassMiddle>
-                        <label>Klasse mittlere Spalte</label>
+                    </classesContainer>
+
+                    <classesCol1>
+                        <label>Klasse Spalte 1</label>
                         <config><type>input</type></config>
-                    </columnClassMiddle>
-                    <columnClassRight>
-                        <label>Klasse rechte Spalte</label>
+                    </classesCol1>
+
+                    <classesCol2>
+                        <label>Klasse Spalte 2</label>
                         <config><type>input</type></config>
-                    </columnClassRight>
+                    </classesCol2>
+
+                    <classesCol3>
+                        <label>Klasse Spalte 3</label>
+                        <config><type>input</type></config>
+                    </classesCol3>
+
                 </el>
             </ROOT>
         </sDEF>
