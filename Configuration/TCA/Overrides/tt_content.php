@@ -1,22 +1,15 @@
 <?php
-/*
-file: Configuration/TCA/Overrides/tt_content.php
-*/
 declare(strict_types=1);
 
 defined('TYPO3') or die();
 
+use B13\Container\Tca\ContainerConfiguration;
 use B13\Container\Tca\Registry;
 use TYPO3\CMS\Core\Utility\ArrayUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-/**
- * Registriert einen Beispiel-Container "Dreispalter".
- * Passe identifier, CType, Labels, colPos und allowed CTypes an dein Projekt an.
- */
 (static function (): void {
-    $extensionKey = 'container_package';
-
-    // 1) CType registrieren: Showitem, Icon, Paletten
+    // Optional: Icon-Zuweisung im TCA (Registry setzt Icon ohnehin, diese Zeilen sind nicht zwingend)
     ArrayUtility::mergeRecursiveWithOverrule(
         $GLOBALS['TCA']['tt_content'],
         [
@@ -42,50 +35,36 @@ use TYPO3\CMS\Core\Utility\ArrayUtility;
         ]
     );
 
-    // 2) Container-Definition über b13/container
+    // Container über Registry + ContainerConfiguration registrieren
     /** @var Registry $registry */
-    $registry = Registry::getInstance();
+    $registry = GeneralUtility::makeInstance(Registry::class);
 
-    $registry->configureContainer(
-    // identifier (eindeutig im System)
+    $config = new ContainerConfiguration(
+    // CType
         'container_three_columns',
-        // Label (BE)
-        'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_db.xlf:container_three_columns.title',
-        // Beschreibung (BE)
-        'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_db.xlf:container_three_columns.description',
-        // Icon Identifier
-        'content-container-3col',
-        // CType
-        'container_three_columns',
-        // Felder, die im Form-Engine-Formular oben erscheinen dürfen
-        [
-            // typische Felder; erweitere bei Bedarf
-            'header',
-            'subheader',
-            'records', // Render-Slot für Kinder; nicht entfernen
-        ],
-        // Spalten-Konfiguration
+        // Label
+        'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:container_three_columns.title',
+        // Beschreibung
+        'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:container_three_columns.description',
+        // Grid-Konfiguration: Array von Zeilen, jede Zeile enthält 1..n Spalten
         [
             [
-                'name' => 'left',
-                'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_db.xlf:container_three_columns.col.left',
-                'colPos' => 201,
-                // optional: erlaubte CTypes einschränken
-                // 'allowed' => ['text', 'textmedia', 'image']
-            ],
-            [
-                'name' => 'middle',
-                'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_db.xlf:container_three_columns.col.middle',
-                'colPos' => 202,
-            ],
-            [
-                'name' => 'right',
-                'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_db.xlf:container_three_columns.col.right',
-                'colPos' => 203,
+                ['name' => 'left',   'colPos' => 201],
+                ['name' => 'middle', 'colPos' => 202],
+                ['name' => 'right',  'colPos' => 203],
             ],
         ]
     );
-})();
 
-$GLOBALS['TCA']['tt_content']['types']['container_three_columns']['previewRenderer']
-    = \AndreasLoewer\ContainerPackage\Backend\Preview\ThreeColumnsPreview::class;
+    // Optional: Icon-Identifier oder SVG-Pfad, Gruppe für Wizard, Defaultwerte
+    $config
+        ->setIcon('content-container-3col')     // nutzt den Icon-Identifier aus Configuration/Icons.php
+        ->setGroup('containers')                // Reiter „Container“ im Wizard
+        ->setRegisterInNewContentElementWizard(true);
+
+    $registry->configureContainer($config);
+
+    // PreviewRenderer registrieren
+    $GLOBALS['TCA']['tt_content']['types']['container_three_columns']['previewRenderer']
+        = \AndreasLoewer\ContainerPackage\Backend\Preview\ThreeColumnsPreview::class;
+})();
