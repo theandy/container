@@ -12,30 +12,37 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
     /** @var Registry $registry */
     $registry = GeneralUtility::makeInstance(Registry::class);
 
+    // Container "Dreispalter"
     $config = new ContainerConfiguration(
-        'container_three_columns',
+        'container_three_columns', // CType
         'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:container_three_columns.title',
         'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:container_three_columns.description',
-        [[
-            ['name' => 'left',   'colPos' => 201],
-            ['name' => 'middle', 'colPos' => 202],
-            ['name' => 'right',  'colPos' => 203],
-        ]]
+        [
+            [
+                ['name' => 'left',   'colPos' => 201],
+                ['name' => 'middle', 'colPos' => 202],
+                ['name' => 'right',  'colPos' => 203],
+            ],
+        ]
     );
-    $config->setIcon('content-container-3col')->setGroup('containers')->setRegisterInNewContentElementWizard(true);
+
+    // Icon + Wizard
+    $config
+        ->setIcon('content-container-3col')
+        ->setGroup('containers')
+        ->setRegisterInNewContentElementWizard(true);
+
     $registry->configureContainer($config);
 
-    // FlexForm registrieren
+    // FlexForm zuordnen
     ExtensionManagementUtility::addPiFlexFormValue(
         'container_three_columns',
         'FILE:EXT:container_package/Configuration/FlexForms/ContainerThreeColumns.xml'
     );
 
-    // FlexForm-Feld in dieses CType einblenden, ohne komplettes showitem zu überschreiben
-    ExtensionManagementUtility::addToAllTCAtypes(
-        'tt_content',
-        'pi_flexform',
-        'container_three_columns',
-        'after:subheader'
-    );
+    // FlexForm im Bearbeitungsformular sichtbar machen (eigener "Plugin"-Tab anhängen)
+    $typeKey = 'container_three_columns';
+    $GLOBALS['TCA']['tt_content']['types'][$typeKey]['showitem'] =
+        trim(($GLOBALS['TCA']['tt_content']['types'][$typeKey]['showitem'] ?? '') . ',
+        --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:plugin,pi_flexform');
 })();

@@ -6,6 +6,7 @@
                 <TCEforms>
                     <sheetTitle>Spalten-Einstellungen</sheetTitle>
                 </TCEforms>
+                <type>array</type>
                 <el>
                     <columnClassLeft>
                         <TCEforms>
@@ -26,12 +27,7 @@
                                         <numIndex index="0">Breit</numIndex>
                                         <numIndex index="1">is-wide</numIndex>
                                     </numIndex>
-                                    <numIndex index="3">
-                                        <numIndex index="0">Hintergrund grau</numIndex>
-                                        <numIndex index="1">bg-gray</numIndex>
-                                    </numIndex>
                                 </items>
-                                <default></default>
                             </config>
                         </TCEforms>
                     </columnClassLeft>
@@ -46,7 +42,6 @@
                                     <numIndex index="0"><numIndex index="0">– keine –</numIndex><numIndex index="1"></numIndex></numIndex>
                                     <numIndex index="1"><numIndex index="0">Schmal</numIndex><numIndex index="1">is-narrow</numIndex></numIndex>
                                     <numIndex index="2"><numIndex index="0">Breit</numIndex><numIndex index="1">is-wide</numIndex></numIndex>
-                                    <numIndex index="3"><numIndex index="0">Hintergrund grau</numIndex><numIndex index="1">bg-gray</numIndex></numIndex>
                                 </items>
                             </config>
                         </TCEforms>
@@ -62,7 +57,6 @@
                                     <numIndex index="0"><numIndex index="0">– keine –</numIndex><numIndex index="1"></numIndex></numIndex>
                                     <numIndex index="1"><numIndex index="0">Schmal</numIndex><numIndex index="1">is-narrow</numIndex></numIndex>
                                     <numIndex index="2"><numIndex index="0">Breit</numIndex><numIndex index="1">is-wide</numIndex></numIndex>
-                                    <numIndex index="3"><numIndex index="0">Hintergrund grau</numIndex><numIndex index="1">bg-gray</numIndex></numIndex>
                                 </items>
                             </config>
                         </TCEforms>
