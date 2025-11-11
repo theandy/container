@@ -7,10 +7,7 @@
         </header>
         <body>
 
-            <trans-unit id="tt_content.c1.title" resname="tt_content.c1.title">
-                <source>1 Spalte</source>
-                <target>1 Spalte</target>
-            </trans-unit>
+
 
 
             <trans-unit id="tt_content.tx_container_classes_col_6" resname="tt_content.tx_container_classes_col_6">

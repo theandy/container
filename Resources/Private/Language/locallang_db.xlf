@@ -4,6 +4,16 @@
         <header/>
         <body>
 
+            <trans-unit id="tt_content.c1.title" resname="tt_content.c1.title">
+                <source>1 Spalte</source>
+                <target>1 Spalte</target>
+            </trans-unit>
+
+            <trans-unit id="tt_content.c1.desc" resname="tt_content.c1.desc">
+                <source>1 Spalte</source>
+                <target>1 Spalte</target>
+            </trans-unit>
+
             <trans-unit id="tab.containerSettings">
                 <source>Container settings</source>
                 <target>Container-Settings</target>
