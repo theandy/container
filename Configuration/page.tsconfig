@@ -1,0 +1,3 @@
+# Wird in TYPO3 ≥ 12 automatisch geladen.
+# Halte diese Datei minimal und importiere dein eigentliches PageTS.
+@import 'EXT:container_package/Configuration/TsConfig/Page/All.tsconfig'

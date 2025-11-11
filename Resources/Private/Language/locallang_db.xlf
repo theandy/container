@@ -1,43 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="messages" date="2023-01-10UTC07:28:570">
-        <header>
-            <authorName>Andreas Löwer</authorName>
-            <authorEmail>info@andreasloewer.de</authorEmail>
-        </header>
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" product-name="container_package">
+        <header/>
         <body>
-            <trans-unit id="tt_content.tx_container_classes_col_6" resname="tt_content.tx_container_classes_col_6">
-                <source>Classes column 6</source>
+        <!-- Container: Dreispalter -->
+            <trans-unit id="container_three_columns.title">
+                <source>Three Columns</source>
+                <target>Dreispalter</target>
             </trans-unit>
-            <trans-unit id="tt_content.tx_container_classes_col_5" resname="tt_content.tx_container_classes_col_5">
-                <source>Classes column 5</source>
+            <trans-unit id="container_three_columns.description">
+                <source>A container element with three columns.</source>
+                <target>Ein Container-Element mit drei Spalten.</target>
             </trans-unit>
-            <trans-unit id="tt_content.tx_container_classes_col_4" resname="tt_content.tx_container_classes_col_4">
-                <source>Classes column 4</source>
+
+        <!-- Spaltenlabels -->
+            <trans-unit id="container_three_columns.col.left">
+                <source>Left column</source>
+                <target>Linke Spalte</target>
             </trans-unit>
-            <trans-unit id="tt_content.tx_container_classes_col_3" resname="tt_content.tx_container_classes_col_3">
-                <source>Classes column 3</source>
+            <trans-unit id="container_three_columns.col.middle">
+                <source>Middle column</source>
+                <target>Mittlere Spalte</target>
             </trans-unit>
-            <trans-unit id="tt_content.tx_container_classes_col_2" resname="tt_content.tx_container_classes_col_2">
-                <source>Classes column 2</source>
+            <trans-unit id="container_three_columns.col.right">
+                <source>Right column</source>
+                <target>Rechte Spalte</target>
             </trans-unit>
-            <trans-unit id="tt_content.tx_container_classes_col_1" resname="tt_content.tx_container_classes_col_1">
-                <source>Classes column 1</source>
+
+        <!-- Wizard-Texte optional wiederverwenden -->
+            <trans-unit id="wizard.container_three_columns.title">
+                <source>Three Columns</source>
+                <target>Dreispalter</target>
             </trans-unit>
-            <trans-unit id="tt_content.tx_container_classes_row" resname="tt_content.tx_container_classes_row">
-                <source>Row classes</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_container_classes_container" resname="tt_content.tx_container_classes_container">
-                <source>Container classes</source>
-            </trans-unit>
-            <trans-unit id="tab.customContainerFields" resname="tab.customContainerFields">
-                <source>Container configuration</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_container_bg_col_1">
-              <source>Background image for column 1</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_container_bg_col_2">
-              <source>Background image for column 2</source>
+            <trans-unit id="wizard.container_three_columns.description">
+                <source>Create a container with three columns.</source>
+                <target>Erstellt einen Container mit drei Spalten.</target>
             </trans-unit>
         </body>
     </file>
