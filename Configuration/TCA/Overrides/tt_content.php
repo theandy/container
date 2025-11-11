@@ -31,16 +31,16 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
     $registry->configureContainer($config);
 
-    // FlexForm DS zuordnen
+    // FlexForm-DS zuordnen (leer für list_type, CType als 3. Parameter)
     ExtensionManagementUtility::addPiFlexFormValue(
-        'container_three_columns',
-        'FILE:EXT:container_package/Configuration/FlexForms/ContainerThreeColumns.xml'
+        '',
+        'FILE:EXT:container_package/Configuration/FlexForms/ContainerThreeColumns.xml',
+        'container_three_columns'
     );
 
     // FlexForm-Feld anhängen, ohne showitem zu überschreiben
     ExtensionManagementUtility::addToAllTCAtypes(
         'tt_content',
-        // eigener Tab + Feld
         '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:plugin,pi_flexform',
         'container_three_columns',
         'after:subheader'
