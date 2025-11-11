@@ -9,6 +9,12 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 final class ThreeColumnsPreview implements PreviewRendererInterface
 {
+    public function renderPageModulePreviewHeader(GridColumnItem $item): string
+    {
+        // Kein eigener Header nötig. Leer lassen.
+        return '';
+    }
+
     public function renderPageModulePreviewContent(GridColumnItem $item): string
     {
         $record = $item->getRecord();
@@ -31,13 +37,25 @@ final class ThreeColumnsPreview implements PreviewRendererInterface
         );
     }
 
+    public function renderPageModulePreviewFooter(GridColumnItem $item): string
+    {
+        // Kein eigener Footer nötig. Leer lassen.
+        return '';
+    }
+
+    public function wrapPageModulePreview(string $content, GridColumnItem $item): string
+    {
+        // Standard: Content unverändert zurückgeben.
+        return $content;
+    }
+
     private function countChildren(array $record, int $colPos): int
     {
-        // Schnelle Zählung über DataProvider. Keine Query-Builder-Injektion nötig.
         $pageId = (int)($record['pid'] ?? 0);
         if ($pageId <= 0) {
             return 0;
         }
+
         $connection = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Database\ConnectionPool::class)
             ->getConnectionForTable('tt_content');
 
