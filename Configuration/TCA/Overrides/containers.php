@@ -330,6 +330,7 @@ foreach ($containers as $identifier => $data) {
 }
 
 // showitem bauen
+/*
 foreach ($containers as $identifier => $data) {
     $customFields = '';
     if (!empty($data['tcaFields'])) {
@@ -342,3 +343,4 @@ foreach ($containers as $identifier => $data) {
         $customFields .
         $languageAccessCats;
 }
+*/
