@@ -14,8 +14,6 @@
                             LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:group.spacing
                         </label>
                         <config>
-                            <type>array</type>
-                            <el>
                                 <spacingTop>
                                     <label>
                                         LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:field.spacingTop
@@ -88,7 +86,6 @@
                                         </items>
                                     </config>
                                 </spacingBottom>
-                            </el>
                         </config>
                     </spacing>
 
