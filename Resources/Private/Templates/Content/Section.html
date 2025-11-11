@@ -1,5 +1,6 @@
 <f:layout name="Default" />
 <f:section name="Main">
+  <h1>Section</h1>
   <f:switch expression="{flex.tag}">
     <f:case value="div"><div id="{flex.id}" class="c-section {flex.containerClass} {flex.spacingTop} {flex.spacingBottom}" aria-label="{flex.ariaLabel}"><f:render partial="Container/SectionContent" /></div></f:case>
     <f:defaultCase><section id="{flex.id}" class="c-section {flex.containerClass} {flex.spacingTop} {flex.spacingBottom}" aria-label="{flex.ariaLabel}"><f:render partial="Container/SectionContent" /></section></f:defaultCase>
