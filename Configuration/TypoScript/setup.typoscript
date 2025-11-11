@@ -36,20 +36,56 @@ lib.containerContent {
 }
 
 tt_content {
+    container_one_column = FLUIDTEMPLATE
+    container_one_column {
+        templateName = OneColumn
+        templateRootPaths.10 = EXT:container_package/Resources/Private/Templates/Content/
+        partialRootPaths.10  = EXT:container_package/Resources/Private/Partials/
+        layoutRootPaths.10   = EXT:container_package/Resources/Private/Layouts/
+        dataProcessing {
+            10 = B13\Container\DataProcessing\ContainerProcessor
+            20 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
+            20.as = flex
+        }
+    }
+
+    container_two_columns = FLUIDTEMPLATE
+    container_two_columns {
+        templateName = TwoColumns
+        templateRootPaths.10 = EXT:container_package/Resources/Private/Templates/Content/
+        partialRootPaths.10  = EXT:container_package/Resources/Private/Partials/
+        layoutRootPaths.10   = EXT:container_package/Resources/Private/Layouts/
+        dataProcessing {
+            10 = B13\Container\DataProcessing\ContainerProcessor
+            20 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
+            20.as = flex
+        }
+    }
+
     container_three_columns = FLUIDTEMPLATE
     container_three_columns {
         templateName = ThreeColumns
         templateRootPaths.10 = EXT:container_package/Resources/Private/Templates/Content/
         partialRootPaths.10  = EXT:container_package/Resources/Private/Partials/
         layoutRootPaths.10   = EXT:container_package/Resources/Private/Layouts/
-
         dataProcessing {
             10 = B13\Container\DataProcessing\ContainerProcessor
             20 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
-            20 {
-                if.isTrue.field = pi_flexform
-                as = flex
-            }
+            20.as = flex
+        }
+    }
+
+    container_section = FLUIDTEMPLATE
+    container_section {
+        templateName = Section
+        templateRootPaths.10 = EXT:container_package/Resources/Private/Templates/Content/
+        partialRootPaths.10  = EXT:container_package/Resources/Private/Partials/
+        layoutRootPaths.10   = EXT:container_package/Resources/Private/Layouts/
+        dataProcessing {
+            10 = B13\Container\DataProcessing\ContainerProcessor
+            20 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
+            20.as = flex
         }
     }
 }
+
