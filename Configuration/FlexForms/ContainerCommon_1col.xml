@@ -51,6 +51,11 @@
                         <config><type>input</type></config>
                     </classesContainer>
 
+                    <classesRow>
+                        <label>Klassen Row</label>
+                        <config><type>input</type></config>
+                    </classesRow>
+
                     <classesCol1>
                         <label>Klasse Spalte</label>
                         <config><type>input</type></config>
