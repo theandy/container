@@ -86,3 +86,6 @@ use TYPO3\CMS\Core\Utility\ArrayUtility;
         ]
     );
 })();
+
+$GLOBALS['TCA']['tt_content']['types']['container_three_columns']['previewRenderer']
+    = \AndreasLoewer\ContainerPackage\Backend\Preview\ThreeColumnsPreview::class;
