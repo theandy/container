@@ -2,16 +2,15 @@
 mod.wizards.newContentElement.wizardItems.containers {
     header = Container
     after = common
-    show = *
     elements {
-        # Beispiel: Einträge werden je Container-CType ergänzt
-        # container_three_columns {
-        #   iconIdentifier = content-container-3col
-        #   title = LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:container_three_columns.title
-        #   description = LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:container_three_columns.description
-        #   tt_content_defValues.CType = container_three_columns
-        # }
+        container_three_columns {
+            iconIdentifier = content-container-3col
+            title = LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:wizard.container_three_columns.title
+            description = LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:wizard.container_three_columns.description
+            tt_content_defValues.CType = container_three_columns
+        }
     }
+    show := addToList(container_three_columns)
 }
 
 # Backend-Labeling verbessern
