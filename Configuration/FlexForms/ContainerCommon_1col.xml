@@ -3,10 +3,11 @@
     <sheets>
         <sDEF>
             <ROOT>
+                <type>array</type>
                 <sheetTitle>
                     LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:sheet.settings
                 </sheetTitle>
-                <type>array</type>
+
                 <el>
 
                     <spacing>
