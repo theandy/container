@@ -13,6 +13,33 @@
                 <target>Ein Container mit einer Spalte.</target>
             </trans-unit>
 
+            <trans-unit id="c2.title">
+                <source>Two columns</source>
+                <target>2 Spalten</target>
+            </trans-unit>
+            <trans-unit id="c2.desc">
+                <source>A container with two columns.</source>
+                <target>Ein Container mit zwei Spalten.</target>
+            </trans-unit>
+
+            <trans-unit id="c3.title">
+                <source>Three columns</source>
+                <target>3 Spalten</target>
+            </trans-unit>
+            <trans-unit id="c3.desc">
+                <source>A container with three columns.</source>
+                <target>Ein Container mit frei Spalten.</target>
+            </trans-unit>
+
+            <trans-unit id="section.title">
+                <source>Section container</source>
+                <target>Section container</target>
+            </trans-unit>
+            <trans-unit id="section.desc">
+                <source>A section container.</source>
+                <target>Ein Section-Container.</target>
+            </trans-unit>
+
             <trans-unit id="tab.containerSettings">
                 <source>Container settings</source>
                 <target>Container-Settings</target>
