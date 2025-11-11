@@ -1,0 +1,16 @@
+{namespace f=TYPO3\CMS\Fluid\ViewHelpers}
+
+<f:if condition="{data.tx_backend_bgcolor}">
+    <style data-container-bg="{data.uid}">
+        .t3js-page-ce[data-element-uid="{data.uid}"],
+        .t3-page-ce[data-uid="{data.uid}"],
+        .t3-page-ce-dragitem[data-uid="{data.uid}"]{
+        background: {data.tx_backend_bgcolor} !important;
+        border: 1px solid rgba(0,0,0,.12);
+        border-radius: 4px;
+        box-shadow: 0 0 0 1px rgba(0,0,0,.03) inset;
+        }
+    </style>
+</f:if>
+
+<f:render partial="Grid" arguments="{_all}" />

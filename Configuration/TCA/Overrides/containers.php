@@ -2,7 +2,7 @@
 defined('TYPO3') or die();
 
 // -----------------------------------
-// 1. Konfiguration aller Container
+// 1) Konfiguration aller Container
 // -----------------------------------
 $iconPath = 'EXT:container_package/Resources/Public/Icons/column-svgrepo-com.svg';
 
@@ -158,7 +158,8 @@ $containers = [
 ];
 
 // -----------------------------------
-// 2. Container registrieren
+// 2) Container registrieren
+//    + Backend-Template setzen
 // -----------------------------------
 $registry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class);
 
@@ -170,6 +171,11 @@ foreach ($containers as $identifier => $data) {
         $data['cols']
     ))->setIcon($iconPath);
 
+    // Backend-Template nur für *-container (nicht für section-container) setzen
+    if (substr($identifier, -10) === '-container') {
+        $config->setBackendTemplate('EXT:container_package/Resources/Private/Templates/Backend/Container.html');
+    }
+
     if (!empty($data['defaults'])) {
         $config->setDefaultValues($data['defaults']);
     }
@@ -177,21 +183,8 @@ foreach ($containers as $identifier => $data) {
     $registry->configureContainer($config);
 }
 
-// PreviewRenderer nur setzen, wenn verfügbar
-if (interface_exists(\TYPO3\CMS\Backend\View\Rendering\PreviewRendererInterface::class)) {
-    foreach (array_keys($containers) as $identifier) {
-        if (substr($identifier, -10) === '-container') {
-            $GLOBALS['TCA']['tt_content']['types'][$identifier]['previewRenderer']
-                = \AndreasLoewer\ContainerPackage\Backend\ContainerPreview::class;
-        }
-    }
-}
-
-
-
-
 // -----------------------------------
-// 3. Zusätzliche Felder definieren
+// 3) Zusätzliche Felder definieren
 // -----------------------------------
 $temporaryColumn = [
     'tx_container_classes_container' => [
@@ -199,7 +192,7 @@ $temporaryColumn = [
         'label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:tt_content.tx_container_classes_container',
         'config' => [
             'type' => 'input',
-            'default' => 'container container-default'
+            'default' => 'container container-default',
         ],
     ],
     'tx_container_bg_col_1' => [
@@ -211,7 +204,7 @@ $temporaryColumn = [
             'minitems' => 0,
             'maxitems' => 1,
             'appearance' => [
-                'showAllLocalizationLink' => true
+                'showAllLocalizationLink' => true,
             ],
         ],
     ],
@@ -224,7 +217,7 @@ $temporaryColumn = [
             'minitems' => 0,
             'maxitems' => 1,
             'appearance' => [
-                'showAllLocalizationLink' => true
+                'showAllLocalizationLink' => true,
             ],
         ],
     ],
@@ -233,7 +226,7 @@ $temporaryColumn = [
         'label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:tt_content.tx_container_classes_row',
         'config' => [
             'type' => 'input',
-            'default' => 'row'
+            'default' => 'row',
         ],
     ],
     'tx_container_classes_col_1' => [
@@ -241,7 +234,7 @@ $temporaryColumn = [
         'label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:tt_content.tx_container_classes_col_1',
         'config' => [
             'type' => 'input',
-            'default' => 'col-12'
+            'default' => 'col-12',
         ],
     ],
     'tx_container_classes_col_2' => [
@@ -249,7 +242,7 @@ $temporaryColumn = [
         'label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:tt_content.tx_container_classes_col_2',
         'config' => [
             'type' => 'input',
-            'default' => 'col-6'
+            'default' => 'col-6',
         ],
     ],
     'tx_container_classes_col_3' => [
@@ -257,7 +250,7 @@ $temporaryColumn = [
         'label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:tt_content.tx_container_classes_col_3',
         'config' => [
             'type' => 'input',
-            'default' => 'col-6'
+            'default' => 'col-6',
         ],
     ],
     'tx_container_classes_col_4' => [
@@ -265,7 +258,7 @@ $temporaryColumn = [
         'label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:tt_content.tx_container_classes_col_4',
         'config' => [
             'type' => 'input',
-            'default' => 'col-6'
+            'default' => 'col-6',
         ],
     ],
     'tx_container_classes_col_5' => [
@@ -273,7 +266,7 @@ $temporaryColumn = [
         'label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:tt_content.tx_container_classes_col_5',
         'config' => [
             'type' => 'input',
-            'default' => 'col-6'
+            'default' => 'col-6',
         ],
     ],
     'tx_container_classes_col_6' => [
@@ -281,13 +274,13 @@ $temporaryColumn = [
         'label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:tt_content.tx_container_classes_col_6',
         'config' => [
             'type' => 'input',
-            'default' => 'col-6'
+            'default' => 'col-6',
         ],
     ],
 
-    // --- NEU: Backend-Hintergrundfarbe nur für *-container ---
+    // Neu: Backend-Hintergrundfarbe nur für *-container
     'tx_backend_bgcolor' => [
-        'exclude' => 0, // bei Bedarf 1 und Rechte vergeben
+        'exclude' => 0,
         'label' => 'Hintergrundfarbe (nur Backend)',
         'description' => 'Wird nur im Seitenmodul angezeigt. Kein Einfluss auf das Frontend.',
         'displayCond' => 'FIELD:CType:LIKE:%-container',
@@ -303,8 +296,8 @@ $temporaryColumn = [
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $temporaryColumn);
 
 // -----------------------------------
-// 4. TCA showitem automatisch bauen
-//    + tx_backend_bgcolor für alle *-container anhängen
+// 4) TCA showitem automatisch bauen
+//    + tx_backend_bgcolor anfügen
 // -----------------------------------
 $baseShowItem = '
     --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
@@ -329,7 +322,7 @@ $languageAccessCats = '
     --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
 ';
 
-// tx_backend_bgcolor zu allen *-container Typen hinzufügen
+// Feld in alle *-container-Typen hängen
 foreach ($containers as $identifier => $data) {
     if (substr($identifier, -10) === '-container') {
         $containers[$identifier]['tcaFields'][] = 'tx_backend_bgcolor';
