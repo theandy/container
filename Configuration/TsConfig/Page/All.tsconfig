@@ -36,3 +36,8 @@ RTE.config.tt_content.bodytext {
 }
 
 # Platzhalter: weitere projektspezifische PageTS hier einfügen
+
+mod.wizards.newContentElement {
+    renderMode = tabs
+    showDescriptions = 1
+}
