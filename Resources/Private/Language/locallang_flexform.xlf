@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2">
+    <file source-language="en" datatype="plaintext" original="messages" target-language="de">
+        <body>
+            <trans-unit id="sheet.settings"><source>Container-Settings</source><target>Container-Einstellungen</target></trans-unit>
+            <trans-unit id="field.spacingTop"><source>Top spacing</source><target>Abstand oben</target></trans-unit>
+            <trans-unit id="field.spacingBottom"><source>Bottom spacing</source><target>Abstand unten</target></trans-unit>
+            <trans-unit id="field.background"><source>BAckground Style</source><target>Hintergrundstil</target></trans-unit>
+            <trans-unit id="opt.none"><source>–</source><target>–</target></trans-unit>
+            <trans-unit id="opt.xs"><source>XS</source><target>XS</target></trans-unit>
+            <trans-unit id="opt.s"><source>S</source><target>S</target></trans-unit>
+            <trans-unit id="opt.m"><source>M</source><target>M</target></trans-unit>
+            <trans-unit id="opt.l"><source>L</source><target>L</target></trans-unit>
+        <!-- weitere Keys -->
+        </body>
+    </file>
+</xliff>

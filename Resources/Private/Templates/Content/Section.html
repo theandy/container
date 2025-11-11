@@ -1,14 +1,13 @@
 <f:layout name="Default" />
 <f:section name="Main">
-  <h1>Section</h1>
-  <f:debug>{flex}</f:debug>
   <f:switch expression="{flex.tag}">
     <f:case value="div">
-      <div id="{flex.id}" class="c-section {flex.containerClass} {flex.spacingTop} {flex.spacingBottom}" aria-label="{flex.ariaLabel}"><f:render partial="Container/SectionContent" /></div>
+      <div id="{flex.id}" class="c-section {flex.containerClass} {flex.spacingTop} {flex.spacingBottom}" aria-label="{flex.ariaLabel}">
+        <f:for each="{children_231}" as="child">{child.renderedContent -> f:format.raw()}</f:for>
+      </div>
     </f:case>
     <f:defaultCase>
       <section id="{flex.id}" class="c-section {flex.containerClass} {flex.spacingTop} {flex.spacingBottom}" aria-label="{flex.ariaLabel}">
-        <f:render partial="Container/SectionContent" />
         <f:for each="{children_231}" as="child">{child.renderedContent -> f:format.raw()}</f:for>
       </section>
     </f:defaultCase>

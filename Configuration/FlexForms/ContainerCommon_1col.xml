@@ -3,25 +3,40 @@
     <sheets>
         <sDEF>
             <ROOT>
-                <sheetTitle>Container-Settings</sheetTitle>
+                <sheetTitle>LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:sheet.settings</sheetTitle>
                 <type>array</type>
                 <el>
                     <spacingTop>
-                        <label>Abstand oben</label>
+                        <label>LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:field.spacingTop</label>
                         <config>
                             <type>select</type><renderType>selectSingle</renderType>
                             <items>
-                                <numIndex index="0"><numIndex index="0">–</numIndex><numIndex index="1"></numIndex></numIndex>
-                                <numIndex index="1"><numIndex index="0">XS</numIndex><numIndex index="1">mt-xs</numIndex></numIndex>
-                                <numIndex index="2"><numIndex index="0">S</numIndex><numIndex index="1">mt-s</numIndex></numIndex>
-                                <numIndex index="3"><numIndex index="0">M</numIndex><numIndex index="1">mt-m</numIndex></numIndex>
-                                <numIndex index="4"><numIndex index="0">L</numIndex><numIndex index="1">mt-l</numIndex></numIndex>
+                                <numIndex index="0">
+                                    <numIndex index="0">LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:opt.none</numIndex>
+                                    <numIndex index="1"></numIndex>
+                                </numIndex>
+                                <numIndex index="1">
+                                    <numIndex index="0">LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:opt.xs</numIndex>
+                                    <numIndex index="1">mt-xs</numIndex>
+                                </numIndex>
+                                <numIndex index="2">
+                                    <numIndex index="0">LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:opt.s</numIndex>
+                                    <numIndex index="1">mt-s</numIndex>
+                                </numIndex>
+                                <numIndex index="3">
+                                    <numIndex index="0">LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:opt.m</numIndex>
+                                    <numIndex index="1">mt-m</numIndex>
+                                </numIndex>
+                                <numIndex index="4">
+                                    <numIndex index="0">LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:opt.l</numIndex>
+                                    <numIndex index="1">mt-l</numIndex>
+                                </numIndex>
                             </items>
                         </config>
                     </spacingTop>
 
                     <spacingBottom>
-                        <label>Abstand unten</label>
+                        <label>LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:field.spacingBottom</label>
                         <config>
                             <type>select</type><renderType>selectSingle</renderType>
                             <items>
@@ -35,7 +50,7 @@
                     </spacingBottom>
 
                     <bgColor>
-                        <label>Hintergrund</label>
+                        <label>LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:field.background</label>
                         <config>
                             <type>select</type><renderType>selectSingle</renderType>
                             <items>
