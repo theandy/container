@@ -6,9 +6,10 @@
     "license": ["GPL-2.0-or-later"],
     "keywords": ["TYPO3 CMS"],
     "require": {
-        "typo3/cms-core": ">=11.0 <12.99",
-        "typo3/cms-fluid-styled-content": ">=11.0 <12.99",
-        "b13/container": "*"
+        "php": "^8.1 || ^8.2 || ^8.3",
+        "typo3/cms-core": "^12.4 || ^13.4",
+        "typo3/cms-fluid-styled-content": "^12.4 || ^13.4",
+        "b13/container": "^3.1.10"
     },
     "autoload": {
         "psr-4": {
@@ -19,5 +20,12 @@
         "typo3/cms": {
             "extension-key": "container_package"
         }
-    }
+    },
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true,
+        "preferred-install": "dist"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }
