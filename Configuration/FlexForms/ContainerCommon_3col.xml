@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <sheetTitle>Container-Settings</sheetTitle>
+                <type>array</type>
+                <el>
+                    <spacingTop>…</spacingTop>
+                    <spacingBottom>…</spacingBottom>
+                    <bgColor>…</bgColor>
+
+                    <columnClassLeft>
+                        <label>Klasse linke Spalte</label>
+                        <config><type>input</type></config>
+                    </columnClassLeft>
+                    <columnClassMiddle>
+                        <label>Klasse mittlere Spalte</label>
+                        <config><type>input</type></config>
+                    </columnClassMiddle>
+                    <columnClassRight>
+                        <label>Klasse rechte Spalte</label>
+                        <config><type>input</type></config>
+                    </columnClassRight>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

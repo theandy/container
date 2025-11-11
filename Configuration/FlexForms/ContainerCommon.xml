@@ -54,12 +54,10 @@
                     <columnClassMiddle>
                         <label>Klasse mittlere Spalte</label>
                         <config><type>input</type></config>
-                        <displayCond>FIELD:CType:=:container_two_columns,container_three_columns</displayCond>
                     </columnClassMiddle>
                     <columnClassRight>
                         <label>Klasse rechte Spalte</label>
                         <config><type>input</type></config>
-                        <displayCond>FIELD:CType:=:container_three_columns</displayCond>
                     </columnClassRight>
                 </el>
             </ROOT>
