@@ -22,7 +22,8 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
             'icon'  => 'content-container-1col',
             'group' => 'containers',
             'wizard'=> true,
-            'flex'  => 'FILE:EXT:container_package/Configuration/FlexForms/ContainerCommon.xml',
+            // Dummy, echte DS kommt per Event-Listener
+            'flex'  => 'FILE:EXT:container_package/Configuration/FlexForms/ContainerDummy.xml',
         ],
         [
             'ctype' => 'container_two_columns',
@@ -35,7 +36,8 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
             'icon'  => 'content-container-2col',
             'group' => 'containers',
             'wizard'=> true,
-            'flex'  => 'FILE:EXT:container_package/Configuration/FlexForms/ContainerCommon.xml',
+            // Dummy, echte DS kommt per Event-Listener
+            'flex'  => 'FILE:EXT:container_package/Configuration/FlexForms/ContainerDummy.xml',
         ],
         [
             'ctype' => 'container_three_columns',
@@ -49,7 +51,8 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
             'icon'  => 'content-container-3col',
             'group' => 'containers',
             'wizard'=> true,
-            'flex'  => 'FILE:EXT:container_package/Configuration/FlexForms/ContainerCommon.xml',
+            // Dummy, echte DS kommt per Event-Listener
+            'flex'  => 'FILE:EXT:container_package/Configuration/FlexForms/ContainerDummy.xml',
         ],
         [
             'ctype' => 'container_section',
@@ -59,19 +62,24 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
             'icon'  => 'content-container-section',
             'group' => 'containers',
             'wizard'=> true,
+            // Section behält eigene XML
             'flex'  => 'FILE:EXT:container_package/Configuration/FlexForms/ContainerSection.xml',
         ],
     ];
 
     foreach ($containers as $c) {
         $config = new ContainerConfiguration($c['ctype'], $c['label'], $c['desc'], $c['grid']);
-        $config->setIcon($c['icon'])->setGroup($c['group'])->setRegisterInNewContentElementWizard((bool)$c['wizard']);
+        $config
+            ->setIcon($c['icon'])
+            ->setGroup($c['group'])
+            ->setRegisterInNewContentElementWizard((bool)$c['wizard']);
         $registry->configureContainer($config);
 
         if (!empty($c['flex'])) {
-            // derselbe FlexForm-File kann für mehrere CTypes verwendet werden
+            // FlexForm-DS zuordnen (leer für list_type, CType als dritter Param)
             ExtensionManagementUtility::addPiFlexFormValue('', $c['flex'], $c['ctype']);
-            // in eigenen Tab „Container-Settings“ hängen
+
+            // Tab „Container-Settings“ + Feld anhängen, ohne showitem zu überschreiben
             ExtensionManagementUtility::addToAllTCAtypes(
                 'tt_content',
                 '--div--;LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:tab.containerSettings,pi_flexform',
