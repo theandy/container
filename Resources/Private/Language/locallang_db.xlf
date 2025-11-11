@@ -4,14 +4,13 @@
         <header/>
         <body>
 
-            <trans-unit id="tt_content.c1.title" resname="tt_content.c1.title">
-                <source>1 Spalte</source>
+            <trans-unit id="c1.title">
+                <source>One column</source>
                 <target>1 Spalte</target>
             </trans-unit>
-
-            <trans-unit id="tt_content.c1.desc" resname="tt_content.c1.desc">
-                <source>1 Spalte</source>
-                <target>1 Spalte</target>
+            <trans-unit id="c1.desc">
+                <source>A container with one column.</source>
+                <target>Ein Container mit einer Spalte.</target>
             </trans-unit>
 
             <trans-unit id="tab.containerSettings">
