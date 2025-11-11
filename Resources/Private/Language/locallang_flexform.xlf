@@ -11,6 +11,7 @@
             <trans-unit id="field.classesCol1"><source>Classes col 1</source><target>Klassen Spalte 1</target></trans-unit>
             <trans-unit id="field.classesCol2"><source>Classes col 2</source><target>Klassen Spalte 2</target></trans-unit>
             <trans-unit id="field.classesCol3"><source>Classes col 3</source><target>Klassen Spalte 3</target></trans-unit>
+            <trans-unit id="field.group.spacing"><source>Spacing options</source><target>Abstände</target></trans-unit>
             <trans-unit id="opt.none"><source>–</source><target>–</target></trans-unit>
             <trans-unit id="opt.xs"><source>XS</source><target>XS</target></trans-unit>
             <trans-unit id="opt.s"><source>S</source><target>S</target></trans-unit>
