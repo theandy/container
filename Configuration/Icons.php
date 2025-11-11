@@ -4,9 +4,20 @@ declare(strict_types=1);
 use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
 
 return [
-    // Icon für den Dreispalter-Container
-    'content-container-3col' => [
-        'provider' => SvgIconProvider::class,
+    'content-container-1col' => [
+        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+        'source' => 'EXT:container_package/Resources/Public/Icons/content-container-1col.svg',
+    ],
+    'content-container-2col' => [
+        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+        'source' => 'EXT:container_package/Resources/Public/Icons/content-container-2col.svg',
+    ],
+    'content-container-3col' => [ // schon vorhanden
+        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
         'source' => 'EXT:container_package/Resources/Public/Icons/content-container-3col.svg',
+    ],
+    'content-container-section' => [
+        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+        'source' => 'EXT:container_package/Resources/Public/Icons/content-container-section.svg',
     ],
 ];
