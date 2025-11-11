@@ -31,18 +31,18 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
     $registry->configureContainer($config);
 
-    // FlexForm-DS zuordnen (leer für list_type, CType als 3. Parameter)
-    ExtensionManagementUtility::addPiFlexFormValue(
+    // FlexForm-DS zuordnen
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
         '',
         'FILE:EXT:container_package/Configuration/FlexForms/ContainerThreeColumns.xml',
         'container_three_columns'
     );
 
-    // FlexForm-Feld anhängen, ohne showitem zu überschreiben
-    ExtensionManagementUtility::addToAllTCAtypes(
+    // Feld nach "records" einfügen (gleicher Tab wie die Kinderliste)
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
         'tt_content',
-        '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:plugin,pi_flexform',
+        'pi_flexform',
         'container_three_columns',
-        'after:subheader'
+        'after:records'
     );
 })();
