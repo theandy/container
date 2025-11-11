@@ -173,7 +173,7 @@ foreach ($containers as $identifier => $data) {
 
     // Backend-Template nur für *-container (nicht für section-container) setzen
     if (substr($identifier, -10) === '-container') {
-        $config->setBackendTemplate('EXT:container_package/Resources/Private/Templates/Backend/Container.html');
+        // $config->setBackendTemplate('EXT:container_package/Resources/Private/Templates/Backend/Container.html');
     }
 
     if (!empty($data['defaults'])) {
