@@ -46,10 +46,15 @@
                         </config>
                     </bgColor>
 
-                    <columnClassLeft>
+                    <classesContainer>
+                        <label>Klassen Container</label>
+                        <config><type>input</type></config>
+                    </classesContainer>
+
+                    <classesCol_1>
                         <label>Klasse Spalte</label>
                         <config><type>input</type></config>
-                    </columnClassLeft>
+                    </classesCol_1>
                 </el>
             </ROOT>
         </sDEF>
