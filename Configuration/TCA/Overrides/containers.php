@@ -1,7 +1,8 @@
+<?php
 /*
     file: Configuration/TCA/Overrides/containers.php
 */
-<?php
+
 
 \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)-> configureContainer(
     (
