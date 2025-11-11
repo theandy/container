@@ -5,13 +5,14 @@ namespace AndreasLoewer\ContainerPackage\Backend\Preview;
 
 use TYPO3\CMS\Backend\Preview\PreviewRendererInterface;
 use TYPO3\CMS\Backend\View\BackendLayout\Grid\GridColumnItem;
+use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 final class ThreeColumnsPreview implements PreviewRendererInterface
 {
     public function renderPageModulePreviewHeader(GridColumnItem $item): string
     {
-        // Kein eigener Header nötig. Leer lassen.
+        // Kein eigener Header nötig
         return '';
     }
 
@@ -39,14 +40,17 @@ final class ThreeColumnsPreview implements PreviewRendererInterface
 
     public function renderPageModulePreviewFooter(GridColumnItem $item): string
     {
-        // Kein eigener Footer nötig. Leer lassen.
+        // Kein eigener Footer nötig
         return '';
     }
 
-    public function wrapPageModulePreview(string $content, GridColumnItem $item): string
+    public function wrapPageModulePreview(string $previewHeader, string $previewContent, GridColumnItem $item): string
     {
-        // Standard: Content unverändert zurückgeben.
-        return $content;
+        // Standard: Header + Content zusammen zurückgeben
+        if ($previewHeader === '' && $previewContent === '') {
+            return '';
+        }
+        return $previewHeader . $previewContent;
     }
 
     private function countChildren(array $record, int $colPos): int
@@ -56,7 +60,7 @@ final class ThreeColumnsPreview implements PreviewRendererInterface
             return 0;
         }
 
-        $connection = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Database\ConnectionPool::class)
+        $connection = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getConnectionForTable('tt_content');
 
         $qb = $connection->createQueryBuilder();
