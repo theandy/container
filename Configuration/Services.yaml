@@ -14,8 +14,3 @@ services:
   # PreviewRenderer optional öffentlich machen, falls per Class-Name instanziert
   AndreasLoewer\ContainerPackage\Backend\Preview\ThreeColumnsPreview:
     public: true
-
-  AndreasLoewer\ContainerPackage\EventListener\FlexForm\ModifyContainerFlexFormDataStructure:
-    tags:
-      - name: event.listener
-        event: 'TYPO3\CMS\Core\Configuration\Event\AfterFlexFormDataStructureParsedEvent'
