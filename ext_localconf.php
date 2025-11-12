@@ -15,9 +15,7 @@ defined('TYPO3') or die();
  * Hook slot:
  * - processDatamap_preProcessFieldArray: runs before the record is persisted.
  */
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']
-['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][]
-    = \AndreasLoewer\ContainerPackage\Hook\ContainerDefaults::class;
+// ToDo!
 
 (static function (): void {
     // Fallback nur für TYPO3 < 12: PageTS laden
