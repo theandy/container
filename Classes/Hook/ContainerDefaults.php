@@ -17,7 +17,6 @@ final class ContainerDefaults
         'container_one_column',
         'container_two_columns',
         'container_three_columns',
-        // ggf. weitere CTypes ergänzen
     ];
 
     public function processDatamap_preProcessFieldArray(
@@ -30,7 +29,6 @@ final class ContainerDefaults
             return;
         }
 
-        // CType ermitteln: bevorzugt aus $incoming, sonst aus aktueller DB, sonst aus Datamap
         $cType = $incomingFieldArray['CType']
             ?? $this->getCurrentCType((string)$id)
             ?? ($dataHandler->datamap['tt_content'][$id]['CType'] ?? null);
@@ -39,28 +37,25 @@ final class ContainerDefaults
             return;
         }
 
-        // Neu = "NEW..." (vor Persist), Alt = numerische UID
         $isNew = is_string($id) && str_starts_with($id, 'NEW');
 
-        // FlexForm laden oder Grundstruktur erzeugen
+        // --- ROBUST: FlexForm XML sicher parsen + Struktur garantieren ---
         $xml = (string)($incomingFieldArray['pi_flexform'] ?? '');
-        $data = $xml ? (GeneralUtility::xml2array($xml) ?: []) : [];
-        $data['data']['sDEF']['lDEF'] ??= [];
+        $data = $this->normalizeFlexForm($xml);
         $lDef =& $data['data']['sDEF']['lDEF'];
 
-        // Aktuellen Wert lesen
-        $current = $lDef['classesRow']['vDEF'] ?? '';
+        $current = is_array($lDef['classesRow'] ?? null)
+            ? (string)($lDef['classesRow']['vDEF'] ?? '')
+            : '';
 
-        // Default nur setzen, wenn neu oder leer
         if ($isNew || $current === '') {
             $lDef['classesRow']['vDEF'] = 'row';
-            // weitere Defaults bei Bedarf:
+            // weitere Defaults:
             // $lDef['classesCol']['vDEF']    = 'g-3';
             // $lDef['spacingTop']['vDEF']    = 'none';
             // $lDef['spacingBottom']['vDEF'] = 'none';
         }
 
-        // Zurück nach XML schreiben, damit es gespeichert wird
         $incomingFieldArray['pi_flexform'] = GeneralUtility::array2xml(
             $data,
             '',
@@ -68,12 +63,33 @@ final class ContainerDefaults
             'T3FlexForms'
         );
 
-        // Optionales Logging bei Bedarf:
         $this->logger()->info('FlexForm defaults applied', [
             'id' => $id,
             'ctype' => $cType,
             'isNew' => $isNew,
         ]);
+    }
+
+    /** Normalisiert das FlexForm-XML zu einer gültigen Array-Struktur. */
+    private function normalizeFlexForm(string $xml): array
+    {
+        $parsed = $xml !== '' ? GeneralUtility::xml2array($xml) : null;
+
+        // Nur akzeptieren, wenn wirklich ein Array zurückkam
+        $data = is_array($parsed) ? $parsed : [];
+
+        // Grundstruktur hart sicherstellen
+        if (!isset($data['data']) || !is_array($data['data'])) {
+            $data['data'] = [];
+        }
+        if (!isset($data['data']['sDEF']) || !is_array($data['data']['sDEF'])) {
+            $data['data']['sDEF'] = [];
+        }
+        if (!isset($data['data']['sDEF']['lDEF']) || !is_array($data['data']['sDEF']['lDEF'])) {
+            $data['data']['sDEF']['lDEF'] = [];
+        }
+
+        return $data;
     }
 
     private function getCurrentCType(string $id): ?string
