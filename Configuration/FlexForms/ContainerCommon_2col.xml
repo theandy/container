@@ -47,23 +47,46 @@
                     </bgColor>
 
                     <classesContainer>
-                        <label>LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:field.classesContainer</label>
-                        <config><type>input</type></config>
+                        <label>
+                            LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:field.classesContainer
+                        </label>
+                        <config>
+                            <type>input</type>
+                            <default>container</default>
+                            <eval>trim</eval>
+                            <placeholder>z. B. container</placeholder>
+                        </config>
                     </classesContainer>
-
                     <classesRow>
-                        <label>LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:field.classesRow</label>
-                        <config><type>input</type></config>
+                        <label>
+                            LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:field.classesRow
+                        </label>
+                        <config>
+                            <type>input</type>
+                            <default>row</default>
+                            <eval>trim</eval>
+                            <placeholder>z. B. row align-items-center</placeholder>
+                        </config>
                     </classesRow>
-
                     <classesCol1>
-                        <label>LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:field.classesCol1</label>
-                        <config><type>input</type></config>
+                        <label>
+                            LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:field.classesCol1
+                        </label>
+                        <config>
+                            <type>input</type>
+                            <default>col-md-6</default>
+                            <eval>trim</eval>
+                            <placeholder>z. B. col-md-6</placeholder>
+                        </config>
                     </classesCol1>
-
                     <classesCol2>
                         <label>LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:field.classesCol2</label>
-                        <config><type>input</type></config>
+                        <config>
+                            <type>input</type>
+                            <default>col-md-6</default>
+                            <eval>trim</eval>
+                            <placeholder>z. B. col-md-6</placeholder>
+                        </config>
                     </classesCol2>
                 </el>
             </ROOT>

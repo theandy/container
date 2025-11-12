@@ -1,47 +1,27 @@
-# Rendering für das Container-CType
-tt_content {
-    container_three_columns = FLUIDTEMPLATE
-    container_three_columns {
-        templateName = ThreeColumns
-        templateRootPaths {
-            10 = EXT:container_package/Resources/Private/Templates/Content/
-        }
-        partialRootPaths {
-            10 = EXT:container_package/Resources/Private/Partials/
-        }
-        layoutRootPaths {
-            10 = EXT:container_package/Resources/Private/Layouts/
-        }
-
-        # Liefert children_<colPos> inkl. renderedContent
-        dataProcessing {
-            10 = B13\Container\DataProcessing\ContainerProcessor
-        }
+# Gemeinsame Pfadbezüge aus Constants
+container_package.view {
+    templateRootPaths {
+        10 = EXT:container_package/Resources/Private/Templates/Content/
+        20 = {$container_package.view.templateRootPaths.20}
+    }
+    partialRootPaths {
+        10 = EXT:container_package/Resources/Private/Partials/
+        20 = {$container_package.view.partialRootPaths.20}
+    }
+    layoutRootPaths {
+        10 = EXT:container_package/Resources/Private/Layouts/
+        20 = {$container_package.view.layoutRootPaths.20}
     }
 }
 
-# Optionaler Fallback/Helper: klassische CONTENT-Abfrage nach colPos.
-# Wird hier nicht benötigt, kann aber für andere Container-Templates nützlich sein.
-lib.containerContent = CONTENT
-lib.containerContent {
-    table = tt_content
-    select {
-        where = colPos = {data:colPos}
-        where.insertData = 1
-        pidInList = this
-        orderBy = sorting
-        languageField = sys_language_uid
-    }
-    renderObj = < tt_content
-}
-
 tt_content {
+
     container_one_column = FLUIDTEMPLATE
     container_one_column {
         templateName = OneColumn
-        templateRootPaths.10 = EXT:container_package/Resources/Private/Templates/Content/
-        partialRootPaths.10  = EXT:container_package/Resources/Private/Partials/
-        layoutRootPaths.10   = EXT:container_package/Resources/Private/Layouts/
+        templateRootPaths  < container_package.view.templateRootPaths
+        partialRootPaths   < container_package.view.partialRootPaths
+        layoutRootPaths    < container_package.view.layoutRootPaths
         dataProcessing {
             10 = B13\Container\DataProcessing\ContainerProcessor
             20 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
@@ -52,9 +32,9 @@ tt_content {
     container_two_columns = FLUIDTEMPLATE
     container_two_columns {
         templateName = TwoColumns
-        templateRootPaths.10 = EXT:container_package/Resources/Private/Templates/Content/
-        partialRootPaths.10  = EXT:container_package/Resources/Private/Partials/
-        layoutRootPaths.10   = EXT:container_package/Resources/Private/Layouts/
+        templateRootPaths  < container_package.view.templateRootPaths
+        partialRootPaths   < container_package.view.partialRootPaths
+        layoutRootPaths    < container_package.view.layoutRootPaths
         dataProcessing {
             10 = B13\Container\DataProcessing\ContainerProcessor
             20 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
@@ -65,9 +45,9 @@ tt_content {
     container_three_columns = FLUIDTEMPLATE
     container_three_columns {
         templateName = ThreeColumns
-        templateRootPaths.10 = EXT:container_package/Resources/Private/Templates/Content/
-        partialRootPaths.10  = EXT:container_package/Resources/Private/Partials/
-        layoutRootPaths.10   = EXT:container_package/Resources/Private/Layouts/
+        templateRootPaths  < container_package.view.templateRootPaths
+        partialRootPaths   < container_package.view.partialRootPaths
+        layoutRootPaths    < container_package.view.layoutRootPaths
         dataProcessing {
             10 = B13\Container\DataProcessing\ContainerProcessor
             20 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
@@ -78,9 +58,9 @@ tt_content {
     container_section = FLUIDTEMPLATE
     container_section {
         templateName = Section
-        templateRootPaths.10 = EXT:container_package/Resources/Private/Templates/Content/
-        partialRootPaths.10  = EXT:container_package/Resources/Private/Partials/
-        layoutRootPaths.10   = EXT:container_package/Resources/Private/Layouts/
+        templateRootPaths  < container_package.view.templateRootPaths
+        partialRootPaths   < container_package.view.partialRootPaths
+        layoutRootPaths    < container_package.view.layoutRootPaths
         dataProcessing {
             10 = B13\Container\DataProcessing\ContainerProcessor
             20 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
@@ -89,3 +69,5 @@ tt_content {
     }
 }
 
+# CSS einbinden über Constant
+page.includeCSS.container_package = {$container_package.assets.cssFile}

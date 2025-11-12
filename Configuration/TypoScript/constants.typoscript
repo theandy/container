@@ -1,15 +1,9 @@
-# Definiere Basispfade als Variablen
-lib.paths {
-    templates = EXT:container_package/Resources/Private/Templates/ContentElements/
-    partials = EXT:container_package/Resources/Private/Partials/ContentElements/
-    layouts = EXT:container_package/Resources/Private/Layouts/ContentElements/
+# Overrides für View-Pfade (leer lassen oder im Projekt überschreiben)
+container_package.view {
+    templateRootPaths.20 =
+    partialRootPaths.20  =
+    layoutRootPaths.20   =
 }
 
-# Verwende die Variablen
-tt_content.1col-container {
-    templateRootPaths.200 < lib.paths.templates
-    partialRootPaths.200 < lib.paths.partials
-    layoutRootPaths.200 < lib.paths.layouts
-}
-
-container_package.cssFile = EXT:container_package/Resources/Public/Css/container_package.css
+# Assets overridebar machen
+container_package.assets.cssFile = EXT:container_package/Resources/Public/Css/container_package.css
