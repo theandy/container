@@ -1,0 +1,4 @@
+name: andreas-loewer/container-package
+label: Container Package
+dependencies:
+  - typo3/fluid-styled-content
