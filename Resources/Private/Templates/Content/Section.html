@@ -1,13 +1,17 @@
+<f:variable name="anchorId" value="{flex.id}" />
+<f:if condition="!{anchorId}">
+    <f:variable name="anchorId" value="c{data.uid}" />
+</f:if>
 
-  <f:switch expression="{flex.tag}">
-    <f:case value="div">
-      <div id="{flex.id}" class="c-section {flex.containerClass} {flex.spacingTop} {flex.spacingBottom}" aria-label="{flex.ariaLabel}">
-        <f:for each="{children_231}" as="child">{child.renderedContent -> f:format.raw()}</f:for>
-      </div>
-    </f:case>
-    <f:defaultCase>
-      <section id="{flex.id}" class="c-section {flex.containerClass} {flex.spacingTop} {flex.spacingBottom}" aria-label="{flex.ariaLabel}">
-        <f:for each="{children_231}" as="child">{child.renderedContent -> f:format.raw()}</f:for>
-      </section>
-    </f:defaultCase>
-  </f:switch>
+<f:switch expression="{flex.tag}">
+  <f:case value="div">
+    <div id="{anchorId}" class="c-section {flex.containerClass} {flex.spacingTop} {flex.spacingBottom}" aria-label="{flex.ariaLabel}">
+      <f:for each="{children_231}" as="child">{child.renderedContent -> f:format.raw()}</f:for>
+    </div>
+  </f:case>
+  <f:defaultCase>
+    <section id="{anchorId}" class="c-section {flex.containerClass} {flex.spacingTop} {flex.spacingBottom}" aria-label="{flex.ariaLabel}">
+      <f:for each="{children_231}" as="child">{child.renderedContent -> f:format.raw()}</f:for>
+    </section>
+  </f:defaultCase>
+</f:switch>
