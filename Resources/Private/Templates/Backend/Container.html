@@ -1,11 +1,22 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
 <f:variable name="beColumns" value="{record.tx_container_package_be_cols}" />
-<f:if condition="!{beColumns}">
-    <f:variable name="beColumns" value="1" />
+<f:if condition="!{beColumns}"><f:variable name="beColumns" value="1" /></f:if>
+
+<f:if condition="{beColumns} > 1">
+    <style>
+        .t3-page-ce-wrapper[data-tx-container-parent="{record.uid}"] {
+            display: grid;
+            grid-template-columns: repeat({beColumns}, 1fr);
+            gap: 4px;
+            align-items: start;
+        }
+    </style>
 </f:if>
 
-<div class="t3-grid-table">
-    <div class="t3-grid-cell"
-         style="display:grid;grid-template-columns:repeat({beColumns},1fr);align-items:start;gap:4px;min-width:0;">
-        {columns.241 -> f:format.raw()}
-    </div>
-</div>
+<f:if condition="{record.tx_container_grid}">
+    <f:then><f:format.raw>{record.tx_container_grid}</f:format.raw></f:then>
+    <f:else><f:format.raw>{tx_container_grid}</f:format.raw></f:else>
+</f:if>
+
+</html>
