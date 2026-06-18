@@ -12,7 +12,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
     /** @var Registry $registry */
     $registry = GeneralUtility::makeInstance(Registry::class);
 
-    // Backend-only column selector for container_block
+    // Backend-only: column count (container_block only)
     $GLOBALS['TCA']['tt_content']['columns']['tx_container_package_be_cols'] = [
         'label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:be_cols.label',
         'config' => [
@@ -30,71 +30,93 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
         ],
     ];
 
+    // Backend-only: highlight colour for all containers
+    $GLOBALS['TCA']['tt_content']['columns']['tx_container_package_be_color'] = [
+        'label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:be_color.label',
+        'config' => [
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'default' => '',
+            'items' => [
+                ['label' => '–',                                                                                       'value' => ''],
+                ['label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:be_color.blue',   'value' => '#dbeafe'],
+                ['label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:be_color.green',  'value' => '#d1fae5'],
+                ['label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:be_color.yellow', 'value' => '#fef9c3'],
+                ['label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:be_color.orange', 'value' => '#fed7aa'],
+                ['label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:be_color.pink',   'value' => '#fce7f3'],
+                ['label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:be_color.purple', 'value' => '#ede9fe'],
+                ['label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:be_color.grey',   'value' => '#f3f4f6'],
+            ],
+        ],
+    ];
+
     // Zentrale Definition aller Container
     $containers = [
         [
-            'ctype' => 'container_block',
-            'label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:block.title',
-            'desc'  => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:block.desc',
-            'grid'  => [[['name' => 'content', 'colPos' => 241]]],
-            'icon'  => 'content-container-block',
-            'flex'  => 'FILE:EXT:container_package/Configuration/FlexForms/ContainerBlock.xml',
+            'ctype'           => 'container_block',
+            'label'           => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:block.title',
+            'desc'            => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:block.desc',
+            'grid'            => [[['name' => 'content', 'colPos' => 241]]],
+            'icon'            => 'content-container-block',
+            'flex'            => 'FILE:EXT:container_package/Configuration/FlexForms/ContainerBlock.xml',
             'backendTemplate' => 'EXT:container_package/Resources/Private/Templates/Backend/Container.html',
         ],
         [
-            'ctype' => 'container_one_column',
-            'label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:c1.title',
-            'desc'  => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:c1.desc',
-            'grid'  => [[['name' => 'content', 'colPos' => 201]]],
-            'icon'  => 'content-container-1col',
-            'flex'  => 'FILE:EXT:container_package/Configuration/FlexForms/ContainerCommon_1col.xml',
+            'ctype'           => 'container_one_column',
+            'label'           => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:c1.title',
+            'desc'            => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:c1.desc',
+            'grid'            => [[['name' => 'content', 'colPos' => 201]]],
+            'icon'            => 'content-container-1col',
+            'flex'            => 'FILE:EXT:container_package/Configuration/FlexForms/ContainerCommon_1col.xml',
+            'backendTemplate' => 'EXT:container_package/Resources/Private/Templates/Backend/Default.html',
         ],
         [
-            'ctype' => 'container_two_columns',
-            'label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:c2.title',
-            'desc'  => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:c2.desc',
-            'grid'  => [[
+            'ctype'           => 'container_two_columns',
+            'label'           => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:c2.title',
+            'desc'            => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:c2.desc',
+            'grid'            => [[
                 ['name' => 'left',  'colPos' => 211],
                 ['name' => 'right', 'colPos' => 212],
             ]],
-            'icon'  => 'content-container-2col',
-            'flex'  => 'FILE:EXT:container_package/Configuration/FlexForms/ContainerCommon_2col.xml',
+            'icon'            => 'content-container-2col',
+            'flex'            => 'FILE:EXT:container_package/Configuration/FlexForms/ContainerCommon_2col.xml',
+            'backendTemplate' => 'EXT:container_package/Resources/Private/Templates/Backend/Default.html',
         ],
         [
-            'ctype' => 'container_three_columns',
-            'label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:c3.title',
-            'desc'  => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:c3.desc',
-            'grid'  => [[
+            'ctype'           => 'container_three_columns',
+            'label'           => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:c3.title',
+            'desc'            => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:c3.desc',
+            'grid'            => [[
                 ['name' => 'left',   'colPos' => 221],
                 ['name' => 'middle', 'colPos' => 222],
                 ['name' => 'right',  'colPos' => 223],
             ]],
-            'icon'  => 'content-container-3col',
-            'flex'  => 'FILE:EXT:container_package/Configuration/FlexForms/ContainerCommon_3col.xml',
+            'icon'            => 'content-container-3col',
+            'flex'            => 'FILE:EXT:container_package/Configuration/FlexForms/ContainerCommon_3col.xml',
+            'backendTemplate' => 'EXT:container_package/Resources/Private/Templates/Backend/Default.html',
         ],
         [
-            'ctype' => 'container_section',
-            'label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:section.title',
-            'desc'  => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:section.desc',
-            'grid'  => [[['name' => 'section', 'colPos' => 231]]],
-            'icon'  => 'content-container-section',
-            'flex'  => 'FILE:EXT:container_package/Configuration/FlexForms/ContainerSection.xml',
+            'ctype'           => 'container_section',
+            'label'           => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:section.title',
+            'desc'            => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:section.desc',
+            'grid'            => [[['name' => 'section', 'colPos' => 231]]],
+            'icon'            => 'content-container-section',
+            'flex'            => 'FILE:EXT:container_package/Configuration/FlexForms/ContainerSection.xml',
+            'backendTemplate' => 'EXT:container_package/Resources/Private/Templates/Backend/Default.html',
         ],
     ];
 
     foreach ($containers as $c) {
         $config = new ContainerConfiguration($c['ctype'], $c['label'], $c['desc'], $c['grid']);
         $config->setIcon($c['icon'])->setGroup('containers')->setRegisterInNewContentElementWizard(true);
-        if (!empty($c['backendTemplate'])) {
-            $config->setBackendTemplate($c['backendTemplate']);
-        }
+        $config->setBackendTemplate($c['backendTemplate']);
         $registry->configureContainer($config);
 
         ExtensionManagementUtility::addPiFlexFormValue('', $c['flex'], $c['ctype']);
 
         $tabFields = $c['ctype'] === 'container_block'
-            ? 'tx_container_package_be_cols,pi_flexform'
-            : 'pi_flexform';
+            ? 'tx_container_package_be_color,tx_container_package_be_cols,pi_flexform'
+            : 'tx_container_package_be_color,pi_flexform';
 
         ExtensionManagementUtility::addToAllTCAtypes(
             'tt_content',
