@@ -90,10 +90,12 @@
                     </classesCol2>
                     <classesCol3>
                         <label>LLL:EXT:container_package/Resources/Private/Language/locallang_flexform.xlf:field.classesCol3</label>
-                        <config><type>input</type></config>
-                        <default>col-md-4</default>
-                        <eval>trim</eval>
-                        <placeholder>z. B. col-md-4</placeholder>
+                        <config>
+                            <type>input</type>
+                            <default>col-md-4</default>
+                            <eval>trim</eval>
+                            <placeholder>z. B. col-md-4</placeholder>
+                        </config>
                     </classesCol3>
 
                 </el>

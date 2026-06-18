@@ -1,8 +1,22 @@
-.container.space-before-default, section.space-before-default {
-  margin-top: 4rem;
-}
-.container.space-after-default, section.space-after-default {
-  margin-bottom: 4rem;
-}
+/* Spacing – top (used by FlexForm spacingTop) */
+.mt-xs { margin-top: 0.5rem; }
+.mt-s  { margin-top: 1rem; }
+.mt-m  { margin-top: 2rem; }
+.mt-l  { margin-top: 4rem; }
 
-/*# sourceMappingURL=container_package.css.map */
+/* Spacing – bottom (used by FlexForm spacingBottom) */
+.mb-xs { margin-bottom: 0.5rem; }
+.mb-s  { margin-bottom: 1rem; }
+.mb-m  { margin-bottom: 2rem; }
+.mb-l  { margin-bottom: 4rem; }
+
+/* Background colours (used by FlexForm bgColor) */
+/* Override with project-specific colours as needed. */
+.bg-light { background-color: #f8f9fa; }
+.bg-dark  { background-color: #212529; color: #fff; }
+
+/* Legacy space-before/after helpers */
+.container.space-before-default,
+section.space-before-default { margin-top: 4rem; }
+.container.space-after-default,
+section.space-after-default  { margin-bottom: 4rem; }

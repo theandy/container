@@ -1,57 +1,12 @@
-# Wizard-Kategorie für Container-Elemente
-mod.wizards.newContentElement.wizardItems.containers {
-    header = Container
-    after = common
-    elements {
-        container_three_columns {
-            iconIdentifier = content-container-3col
-            title = LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:wizard.container_three_columns.title
-            description = LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:wizard.container_three_columns.description
-            tt_content_defValues.CType = container_three_columns
-        }
-    }
-    show := addToList(container_three_columns)
+# Keep header field visible for all container content types
+TCEFORM.tt_content.header.types {
+    container_one_column.disabled = 0
+    container_two_columns.disabled = 0
+    container_three_columns.disabled = 0
+    container_section.disabled = 0
 }
 
-# Backend-Labeling verbessern
-TCEFORM.tt_content {
-    # Optional: Standard-Header-Feld sichtbar halten
-    header.types.default.disabled = 0
-}
-
-# Kontextmenü: „In Container verschieben“ bleibt verfügbar
+# Allow moving content into container columns via context menu
 options.contextMenu.table.tt_content {
     disableItems := removeFromList(moveToColumn)
-}
-
-# Backend-Layout: Spaltennamen anzeigen
-mod.web_layout.tt_content.preview.toggle = 1
-
-# Drag & Drop Verhalten in Listenansicht verbessern
-mod.web_list.enableClickMenu = 1
-
-# Optional: RTE-Konfiguration für Inhalte innerhalb von Containern
-RTE.config.tt_content.bodytext {
-    proc.allowTagsOutside = div,span,section
-}
-
-# Platzhalter: weitere projektspezifische PageTS hier einfügen
-
-mod.wizards.newContentElement.wizardItems.containers.elements {
-    container_one_column {
-        title = LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:c1.title
-        description = LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:c1.desc
-    }
-    container_two_columns {
-        title = LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:c2.title
-        description = LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:c2.desc
-    }
-    container_three_columns {
-        title = LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:c3.title
-        description = LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:c3.desc
-    }
-    container_section {
-        title = LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:section.title
-        description = LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:section.desc
-    }
 }

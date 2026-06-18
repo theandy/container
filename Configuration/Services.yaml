@@ -1,16 +1,10 @@
-# Symfony DI-Konfiguration für die Extension
 services:
   _defaults:
     autowire: true
     autoconfigure: true
     public: false
 
-  # Alle Klassen registrieren, Domain-Modelle typischerweise ausschließen
   AndreasLoewer\ContainerPackage\:
     resource: '../Classes/*'
     exclude:
       - '../Classes/Domain/Model/*'
-
-  # PreviewRenderer optional öffentlich machen, falls per Class-Name instanziert
-  AndreasLoewer\ContainerPackage\Backend\Preview\ThreeColumnsPreview:
-    public: true

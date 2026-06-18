@@ -5,7 +5,7 @@
             <trans-unit id="sheet.settings"><source>Container-Settings</source><target>Container-Einstellungen</target></trans-unit>
             <trans-unit id="field.spacingTop"><source>Top spacing</source><target>Abstand oben</target></trans-unit>
             <trans-unit id="field.spacingBottom"><source>Bottom spacing</source><target>Abstand unten</target></trans-unit>
-            <trans-unit id="field.background"><source>BAckground Style</source><target>Hintergrundstil</target></trans-unit>
+            <trans-unit id="field.background"><source>Background style</source><target>Hintergrundstil</target></trans-unit>
             <trans-unit id="field.classesContainer"><source>Container classes</source><target>Containerklassen</target></trans-unit>
             <trans-unit id="field.classesRow"><source>Row classes</source><target>Rowklassen</target></trans-unit>
             <trans-unit id="field.classesCol1"><source>Classes col 1</source><target>Klassen Spalte 1</target></trans-unit>
