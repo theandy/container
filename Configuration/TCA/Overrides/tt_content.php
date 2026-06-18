@@ -12,6 +12,24 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
     /** @var Registry $registry */
     $registry = GeneralUtility::makeInstance(Registry::class);
 
+    // Backend-only column selector for container_block
+    $GLOBALS['TCA']['tt_content']['columns']['tx_container_package_be_cols'] = [
+        'label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:be_cols.label',
+        'config' => [
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'default' => 1,
+            'items' => [
+                ['label' => '1', 'value' => 1],
+                ['label' => '2', 'value' => 2],
+                ['label' => '3', 'value' => 3],
+                ['label' => '4', 'value' => 4],
+                ['label' => '5', 'value' => 5],
+                ['label' => '6', 'value' => 6],
+            ],
+        ],
+    ];
+
     // Zentrale Definition aller Container
     $containers = [
         [
@@ -21,6 +39,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
             'grid'  => [[['name' => 'content', 'colPos' => 241]]],
             'icon'  => 'content-container-block',
             'flex'  => 'FILE:EXT:container_package/Configuration/FlexForms/ContainerBlock.xml',
+            'backendTemplate' => 'EXT:container_package/Resources/Private/Templates/Backend/Container.html',
         ],
         [
             'ctype' => 'container_one_column',
@@ -66,15 +85,20 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
     foreach ($containers as $c) {
         $config = new ContainerConfiguration($c['ctype'], $c['label'], $c['desc'], $c['grid']);
         $config->setIcon($c['icon'])->setGroup('containers')->setRegisterInNewContentElementWizard(true);
+        if (!empty($c['backendTemplate'])) {
+            $config->setBackendTemplate($c['backendTemplate']);
+        }
         $registry->configureContainer($config);
 
-        // FlexForm je CType zuordnen
         ExtensionManagementUtility::addPiFlexFormValue('', $c['flex'], $c['ctype']);
 
-        // FlexForm in eigenen Tab „Container-Settings“ anhängen
+        $tabFields = $c['ctype'] === 'container_block'
+            ? 'tx_container_package_be_cols,pi_flexform'
+            : 'pi_flexform';
+
         ExtensionManagementUtility::addToAllTCAtypes(
             'tt_content',
-            '--div--;LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:tab.containerSettings,pi_flexform',
+            '--div--;LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:tab.containerSettings,' . $tabFields,
             $c['ctype']
         );
     }

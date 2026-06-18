@@ -1,0 +1,11 @@
+<f:variable name="beColumns" value="{record.tx_container_package_be_cols}" />
+<f:if condition="!{beColumns}">
+    <f:variable name="beColumns" value="1" />
+</f:if>
+
+<div class="t3-grid-table">
+    <div class="t3-grid-cell"
+         style="display:grid;grid-template-columns:repeat({beColumns},1fr);align-items:start;gap:4px;min-width:0;">
+        {columns.241 -> f:format.raw()}
+    </div>
+</div>

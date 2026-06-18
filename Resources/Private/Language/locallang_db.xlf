@@ -4,6 +4,11 @@
         <header/>
         <body>
 
+            <trans-unit id="be_cols.label">
+                <source>Columns (backend preview)</source>
+                <target>Spalten (Backend-Vorschau)</target>
+            </trans-unit>
+
             <trans-unit id="block.title">
                 <source>Container</source>
                 <target>Container</target>
