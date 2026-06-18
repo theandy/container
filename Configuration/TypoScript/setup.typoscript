@@ -16,6 +16,19 @@ container_package.view {
 
 tt_content {
 
+    container_block = FLUIDTEMPLATE
+    container_block {
+        templateName = Container
+        templateRootPaths  < container_package.view.templateRootPaths
+        partialRootPaths   < container_package.view.partialRootPaths
+        layoutRootPaths    < container_package.view.layoutRootPaths
+        dataProcessing {
+            10 = B13\Container\DataProcessing\ContainerProcessor
+            20 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
+            20.as = flex
+        }
+    }
+
     container_one_column = FLUIDTEMPLATE
     container_one_column {
         templateName = OneColumn

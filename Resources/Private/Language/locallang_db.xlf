@@ -4,6 +4,15 @@
         <header/>
         <body>
 
+            <trans-unit id="block.title">
+                <source>Container</source>
+                <target>Container</target>
+            </trans-unit>
+            <trans-unit id="block.desc">
+                <source>A generic container element, optionally with an inner row.</source>
+                <target>Ein generisches Container-Element, optional mit innerer Row.</target>
+            </trans-unit>
+
             <trans-unit id="c1.title">
                 <source>One column</source>
                 <target>1 Spalte</target>

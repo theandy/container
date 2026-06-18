@@ -15,6 +15,14 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
     // Zentrale Definition aller Container
     $containers = [
         [
+            'ctype' => 'container_block',
+            'label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:block.title',
+            'desc'  => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:block.desc',
+            'grid'  => [[['name' => 'content', 'colPos' => 241]]],
+            'icon'  => 'content-container-block',
+            'flex'  => 'FILE:EXT:container_package/Configuration/FlexForms/ContainerBlock.xml',
+        ],
+        [
             'ctype' => 'container_one_column',
             'label' => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:c1.title',
             'desc'  => 'LLL:EXT:container_package/Resources/Private/Language/locallang_db.xlf:c1.desc',
