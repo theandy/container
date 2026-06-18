@@ -1,19 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
-<f:variable name="beColumns" value="{record.tx_container_package_be_cols}" />
-<f:if condition="!{beColumns}"><f:variable name="beColumns" value="1" /></f:if>
-
-<f:if condition="{beColumns} > 1">
-    <style>
-        .t3-page-ce-wrapper[data-tx-container-parent="{record.uid}"] {
-            display: grid;
-            grid-template-columns: repeat({beColumns}, 1fr);
-            gap: 4px;
-            align-items: start;
-        }
-    </style>
-</f:if>
-
 <f:if condition="{record.tx_container_package_be_color}">
     <style>
         [data-tx-container-parent="{record.uid}"] {

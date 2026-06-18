@@ -4,6 +4,39 @@
         <header/>
         <body>
 
+            <trans-unit id="be_color.label">
+                <source>Highlight colour (backend)</source>
+                <target>Hintergrundfarbe (Backend)</target>
+            </trans-unit>
+            <trans-unit id="be_color.blue">
+                <source>Blue</source>
+                <target>Blau</target>
+            </trans-unit>
+            <trans-unit id="be_color.green">
+                <source>Green</source>
+                <target>Grün</target>
+            </trans-unit>
+            <trans-unit id="be_color.yellow">
+                <source>Yellow</source>
+                <target>Gelb</target>
+            </trans-unit>
+            <trans-unit id="be_color.orange">
+                <source>Orange</source>
+                <target>Orange</target>
+            </trans-unit>
+            <trans-unit id="be_color.pink">
+                <source>Pink</source>
+                <target>Rosa</target>
+            </trans-unit>
+            <trans-unit id="be_color.purple">
+                <source>Purple</source>
+                <target>Lila</target>
+            </trans-unit>
+            <trans-unit id="be_color.grey">
+                <source>Grey</source>
+                <target>Grau</target>
+            </trans-unit>
+
             <trans-unit id="be_cols.label">
                 <source>Columns (backend preview)</source>
                 <target>Spalten (Backend-Vorschau)</target>
