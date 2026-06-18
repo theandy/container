@@ -1,0 +1,13 @@
+
+<div class="c-container {flex.classesContainer} {flex.spacingTop} {flex.spacingBottom} {flex.bgColor}" id="c{data.uid}">
+  <f:if condition="{flex.useRow} == 1">
+    <f:then>
+      <div class="c-row {flex.classesRow}">
+        <f:for each="{children_241}" as="child">{child.renderedContent -> f:format.raw()}</f:for>
+      </div>
+    </f:then>
+    <f:else>
+      <f:for each="{children_241}" as="child">{child.renderedContent -> f:format.raw()}</f:for>
+    </f:else>
+  </f:if>
+</div>
